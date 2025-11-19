@@ -202,24 +202,30 @@ export default function Home() {
         </section>
 
         {/* Why Choose GradeGenius - Competitive Advantages */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white" aria-labelledby="advantages-heading">
-          <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 id="advantages-heading" className="text-4xl md:text-5xl font-bold mb-4">
+        <section className="section-padding bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden" aria-labelledby="advantages-heading">
+          {/* Decorative elements */}
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 id="advantages-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
                 Why Choose GradeGenius Over Crowdmark & Gradescope?
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
                 See how our AI-powered platform delivers results that traditional grading tools can't match
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {/* Advantage 1 */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 card-hover">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
-                  <Brain className="h-7 w-7 text-white" />
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
+                  <Brain className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">AI-Powered Automation</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">AI-Powered Automation</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Unlike Crowdmark and Gradescope, GradeGenius uses advanced AI to automatically generate rubrics, suggest feedback, and ensure consistency across all submissions.
                 </p>
@@ -232,11 +238,11 @@ export default function Home() {
               </div>
 
               {/* Advantage 2 */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 card-hover">
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
-                  <Zap className="h-7 w-7 text-white" />
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
+                  <Zap className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Intelligent Time Savings</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Intelligent Time Savings</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   While Crowdmark and Gradescope offer basic grading workflows, GradeGenius's AI automation reduces grading time by up to 85%, giving you back hours every week.
                 </p>
@@ -249,11 +255,11 @@ export default function Home() {
               </div>
 
               {/* Advantage 3 */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 card-hover">
-                <div className="bg-gradient-to-r from-cyan-600 to-blue-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6" aria-hidden="true">
-                  <Award className="h-7 w-7 text-white" />
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
+                <div className="bg-gradient-to-r from-cyan-600 to-blue-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
+                  <Award className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Superior Feedback Quality</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Superior Feedback Quality</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   GradeGenius doesn't just streamline grading—it enhances feedback quality with AI-assisted suggestions that are personalized, constructive, and aligned with your teaching style.
                 </p>
@@ -266,8 +272,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-16 text-center">
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <div className="mt-12 sm:mt-16 text-center">
+              <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 px-4">
                 With GradeGenius, you're not just grading smarter—you're transforming your entire teaching experience.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -293,44 +299,60 @@ export default function Home() {
         </section>
 
         {/* How It Works Section */}
-        <section className="section-padding bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white" aria-labelledby="how-it-works-heading">
-          <div className="container-custom">
+        <section className="section-padding bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden" aria-labelledby="how-it-works-heading">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 opacity-30" aria-hidden="true">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-200 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container-custom relative z-10">
             <div className="text-center mb-16">
-              <h2 id="how-it-works-heading" className="text-4xl md:text-5xl font-bold mb-4">
+              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md mb-6">
+                <Sparkles className="h-4 w-4 text-purple-600" aria-hidden="true" />
+                <span className="text-sm font-medium text-gray-700">Simple 3-Step Process</span>
+              </div>
+              <h2 id="how-it-works-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                 How It Works
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Get started in minutes with our simple three-step process
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
-              <div className="text-center" role="listitem">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold" aria-hidden="true">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12" role="list">
+              <div className="text-center group" role="listitem">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl font-bold text-white shadow-xl transform group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                   1
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Create Assignment</h3>
-                <p className="text-gray-300 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Create Assignment</h3>
+                <p className="text-gray-600 leading-relaxed">
                   Upload your assignment details and let our AI generate a comprehensive rubric tailored to your requirements.
                 </p>
               </div>
 
-              <div className="text-center" role="listitem">
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold" aria-hidden="true">
+              <div className="text-center group relative" role="listitem">
+                {/* Connection line for desktop */}
+                <div className="hidden md:block absolute top-10 -left-12 w-24 h-0.5 bg-gradient-to-r from-purple-300 to-pink-300" aria-hidden="true"></div>
+
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl font-bold text-white shadow-xl transform group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                   2
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Students Submit</h3>
-                <p className="text-gray-300 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Students Submit</h3>
+                <p className="text-gray-600 leading-relaxed">
                   Students upload their work through the secure portal. All submissions are organized and ready for review.
                 </p>
               </div>
 
-              <div className="text-center" role="listitem">
-                <div className="bg-gradient-to-r from-cyan-600 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold" aria-hidden="true">
+              <div className="text-center group relative" role="listitem">
+                {/* Connection line for desktop */}
+                <div className="hidden md:block absolute top-10 -left-12 w-24 h-0.5 bg-gradient-to-r from-pink-300 to-cyan-300" aria-hidden="true"></div>
+
+                <div className="bg-gradient-to-r from-cyan-600 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl font-bold text-white shadow-xl transform group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                   3
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Grade with AI</h3>
-                <p className="text-gray-300 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Grade with AI</h3>
+                <p className="text-gray-600 leading-relaxed">
                   Review AI-assisted feedback suggestions, make adjustments, and release grades—all in a fraction of the time.
                 </p>
               </div>
