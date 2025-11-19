@@ -42,7 +42,7 @@ export default function Pricing() {
         { name: 'Bulk operations', included: true },
         { name: 'Export data', included: true }
       ],
-      cta: 'Start Free Trial',
+      cta: 'Get Started Free',
       popular: true,
       gradient: 'from-purple-600 to-pink-600'
     },

@@ -39,32 +39,34 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-all duration-200"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-6 w-6 transition-transform duration-200 rotate-90" /> : <Menu className="h-6 w-6 transition-transform duration-200" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
-            <Link href="/" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="pb-4 space-y-2">
+            <Link href="/" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-200 transform hover:translate-x-1">
               Home
             </Link>
-            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+            <Link href="/about" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-200 transform hover:translate-x-1">
               About
             </Link>
-            <Link href="/pricing" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+            <Link href="/pricing" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-200 transform hover:translate-x-1">
               Pricing
             </Link>
-            <Link href="/contact" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+            <Link href="/contact" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-200 transform hover:translate-x-1">
               Contact
             </Link>
-            <Link href="http://localhost:3002/login" className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg text-center">
+            <Link href="http://localhost:3002/login" className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg text-center transition-all duration-200 hover:shadow-lg transform hover:scale-105">
               Login
             </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

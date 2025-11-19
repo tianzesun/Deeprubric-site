@@ -174,7 +174,7 @@ export default function About() {
             Become part of a growing community of educators transforming how they grade and provide feedback.
           </p>
           <a href="http://localhost:3002/login" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-lg inline-block">
-            Get Started Today
+            Get Started Free
           </a>
         </div>
       </section>
