@@ -44,7 +44,7 @@ export default function Home() {
                 </h1>
 
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                  Transform your grading workflow with intelligent rubric generation, automated feedback assistance, and powerful analytics. Save hours every week while providing better student feedback.
+                  Transform your grading workflow with intelligent rubric generation, AI plagiarism detection, automated feedback assistance, and powerful analytics. Save hours every week while ensuring academic integrity.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -90,11 +90,11 @@ export default function Home() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="h-5 w-5 text-green-500" aria-hidden="true" />
-                        <span className="text-sm text-gray-600">Feedback suggestions ready</span>
+                        <span className="text-sm text-gray-600">Plagiarism checked</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="h-5 w-5 text-green-500" aria-hidden="true" />
-                        <span className="text-sm text-gray-600">Consistency verified</span>
+                        <span className="text-sm text-gray-600">Feedback suggestions ready</span>
                       </div>
                     </div>
 
@@ -193,11 +193,11 @@ export default function Home() {
               {/* Feature 6 */}
               <article className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover" role="listitem">
                 <div className="bg-gradient-to-r from-indigo-600 to-purple-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
-                  <Users className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                  <Shield className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Student Portal</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">AI Plagiarism Detection</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Students can view grades, feedback, and track their progress through an intuitive, easy-to-use interface.
+                  Advanced AI scans submissions for plagiarism, paraphrasing, and AI-generated content. Ensure academic integrity with detailed similarity reports.
                 </p>
               </article>
             </div>
@@ -226,7 +226,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {/* Benefit 1 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
@@ -234,16 +234,16 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-3">Smart Rubric Generation</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Our AI analyzes your assignment requirements and automatically creates comprehensive, customizable rubrics in seconds. No more spending hours crafting grading criteria from scratch.
+                  AI analyzes your assignment and automatically creates comprehensive, customizable rubrics in seconds.
                 </p>
                 <ul className="space-y-2">
                   <li className="text-green-400 text-sm flex items-start">
                     <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Context-aware criteria suggestions</span>
+                    <span>Context-aware criteria</span>
                   </li>
                   <li className="text-green-400 text-sm flex items-start">
                     <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Customizable scoring scales</span>
+                    <span>Fully customizable</span>
                   </li>
                 </ul>
               </div>
@@ -251,20 +251,20 @@ export default function Home() {
               {/* Benefit 2 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
                 <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
-                  <Lightbulb className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                  <Shield className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">Intelligent Feedback Assistant</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Plagiarism Detection</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Get AI-powered feedback suggestions that are constructive, specific, and aligned with your teaching philosophy. Each suggestion is contextual to the student's work.
+                  Advanced AI detects plagiarism, paraphrasing, and AI-generated content. Maintain academic integrity effortlessly.
                 </p>
                 <ul className="space-y-2">
                   <li className="text-green-400 text-sm flex items-start">
                     <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Personalized to each student</span>
+                    <span>AI content detection</span>
                   </li>
                   <li className="text-green-400 text-sm flex items-start">
                     <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Tone and style customization</span>
+                    <span>Detailed similarity reports</span>
                   </li>
                 </ul>
               </div>
@@ -272,20 +272,41 @@ export default function Home() {
               {/* Benefit 3 */}
               <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
                 <div className="bg-gradient-to-r from-cyan-600 to-blue-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
-                  <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                  <Lightbulb className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">Adaptive Learning Insights</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Intelligent Feedback</h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Our AI identifies patterns in student performance, highlights common mistakes, and provides actionable insights to improve your teaching strategies.
+                  AI-powered feedback suggestions that are constructive, specific, and aligned with your teaching philosophy.
                 </p>
                 <ul className="space-y-2">
                   <li className="text-green-400 text-sm flex items-start">
                     <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Automatic trend detection</span>
+                    <span>Personalized suggestions</span>
                   </li>
                   <li className="text-green-400 text-sm flex items-start">
                     <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Predictive performance analytics</span>
+                    <span>Style customization</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Benefit 4 */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 card-hover border border-white/10">
+                <div className="bg-gradient-to-r from-green-600 to-emerald-600 w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-6" aria-hidden="true">
+                  <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Learning Analytics</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  AI identifies patterns in student performance and provides actionable insights to improve teaching strategies.
+                </p>
+                <ul className="space-y-2">
+                  <li className="text-green-400 text-sm flex items-start">
+                    <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span>Trend detection</span>
+                  </li>
+                  <li className="text-green-400 text-sm flex items-start">
+                    <CheckCircle className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span>Predictive analytics</span>
                   </li>
                 </ul>
               </div>
