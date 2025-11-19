@@ -7,63 +7,60 @@ export default function Pricing() {
     {
       name: 'Starter',
       icon: Zap,
-      price: 'Free',
-      period: 'forever',
-      description: 'Perfect for individual educators getting started',
+      description: 'Perfect for individual educators getting started with AI grading',
       features: [
         { name: 'Up to 3 courses', included: true },
-        { name: '50 assignments per month', included: true },
+        { name: 'Limited assignments per month', included: true },
         { name: 'AI rubric generation', included: true },
+        { name: 'Plagiarism detection', included: true },
         { name: 'Basic analytics', included: true },
         { name: 'Email support', included: true },
         { name: 'Advanced AI feedback', included: false },
-        { name: 'Custom branding', included: false },
-        { name: 'API access', included: false },
+        { name: 'Bulk operations', included: false },
+        { name: 'Custom integrations', included: false },
         { name: 'Priority support', included: false }
       ],
-      cta: 'Get Started Free',
+      cta: 'Contact for Pricing',
       popular: false,
       gradient: 'from-blue-600 to-cyan-600'
     },
     {
       name: 'Professional',
       icon: Users,
-      price: '$29',
-      period: '/month',
-      description: 'For educators who need more power and flexibility',
+      description: 'For educators who need unlimited access and advanced features',
       features: [
         { name: 'Unlimited courses', included: true },
         { name: 'Unlimited assignments', included: true },
         { name: 'AI rubric generation', included: true },
-        { name: 'Advanced analytics', included: true },
+        { name: 'Advanced plagiarism detection', included: true },
+        { name: 'Advanced analytics & insights', included: true },
         { name: 'Priority email support', included: true },
         { name: 'Advanced AI feedback', included: true },
         { name: 'Custom rubric templates', included: true },
         { name: 'Bulk operations', included: true },
-        { name: 'Export data', included: true }
+        { name: 'Export data (CSV, PDF)', included: true }
       ],
-      cta: 'Get Started Free',
+      cta: 'Contact for Pricing',
       popular: true,
       gradient: 'from-purple-600 to-pink-600'
     },
     {
       name: 'Enterprise',
       icon: Building2,
-      price: 'Custom',
-      period: 'pricing',
-      description: 'For institutions and large departments',
+      description: 'For institutions and departments with custom requirements',
       features: [
         { name: 'Everything in Professional', included: true },
-        { name: 'Unlimited users', included: true },
-        { name: 'Custom integrations', included: true },
+        { name: 'Unlimited users & departments', included: true },
+        { name: 'Custom integrations (LMS, SIS)', included: true },
         { name: 'SSO/SAML authentication', included: true },
         { name: 'Dedicated account manager', included: true },
         { name: 'Custom AI model training', included: true },
-        { name: 'SLA guarantee', included: true },
+        { name: 'SLA guarantee (99.9% uptime)', included: true },
         { name: 'On-premise deployment option', included: true },
-        { name: '24/7 phone support', included: true }
+        { name: '24/7 priority phone support', included: true },
+        { name: 'Custom contract terms', included: true }
       ],
-      cta: 'Contact Sales',
+      cta: 'Contact for Pricing',
       popular: false,
       gradient: 'from-indigo-600 to-purple-600'
     }
@@ -77,10 +74,10 @@ export default function Pricing() {
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Simple, Transparent <span className="gradient-text">Pricing</span>
+            Choose Your <span className="gradient-text">Plan</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Choose the plan that fits your needs. All plans include a 14-day free trial with no credit card required.
+            Compare our plans and find the right fit for your needs. Contact us for custom pricing tailored to your institution.
           </p>
         </div>
       </section>
@@ -110,18 +107,11 @@ export default function Pricing() {
                       <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${plan.gradient} mb-4`}>
                         <Icon className="h-8 w-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                      <p className="text-gray-600 text-sm mb-6">{plan.description}</p>
-
-                      <div className="mb-6">
-                        <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-                        {plan.period && (
-                          <span className="text-gray-600 text-lg ml-2">{plan.period}</span>
-                        )}
-                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                      <p className="text-gray-600 text-sm mb-8 min-h-[3rem]">{plan.description}</p>
 
                       <a
-                        href={plan.name === 'Enterprise' ? '/contact' : 'http://localhost:3002/login'}
+                        href="/contact"
                         className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
                           plan.popular
                             ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-xl'
@@ -165,28 +155,28 @@ export default function Pricing() {
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Is there really a free plan?
+                How does pricing work?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Yes! Our Starter plan is free forever with no credit card required. It includes all core features with usage limits suitable for individual educators managing a few courses.
+                We offer custom pricing tailored to your specific needs, institution size, and number of users. Contact us to discuss a plan that fits your budget and requirements perfectly.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Can I switch plans anytime?
+                Can I try GradeGenius before committing?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Absolutely! You can upgrade, downgrade, or cancel your plan at any time. Changes take effect immediately, and we prorate billing accordingly.
+                Yes! We offer demos and trial access so you can experience GradeGenius firsthand. Contact our team to schedule a personalized demo or request trial access for your institution.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                What's included in the free trial?
+                What's the difference between plan tiers?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                The 14-day free trial gives you full access to all Professional plan features with no credit card required. No automatic billing—you only pay if you decide to continue after the trial.
+                Each tier offers different feature sets and usage limits. Starter is ideal for individual educators, Professional for power users needing unlimited access, and Enterprise for institutions requiring custom integrations and dedicated support.
               </p>
             </div>
 
@@ -195,7 +185,7 @@ export default function Pricing() {
                 Do you offer educational institution discounts?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Yes! We offer special pricing for educational institutions, non-profits, and bulk licenses. Contact our sales team to discuss custom pricing for your organization.
+                Absolutely! We offer special pricing for educational institutions, non-profits, and multi-user licenses. Our pricing is designed to be accessible for schools and universities of all sizes. Contact us to discuss your specific needs.
               </p>
             </div>
 
@@ -210,10 +200,10 @@ export default function Pricing() {
 
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                What payment methods do you accept?
+                What's included in the Enterprise plan?
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and wire transfers for Enterprise plans. Invoicing is available for institutional customers.
+                Enterprise plans include everything in Professional plus custom integrations with your LMS/SIS, SSO authentication, dedicated account management, SLA guarantees, and optional on-premise deployment. We work with you to customize the plan for your institution's needs.
               </p>
             </div>
           </div>
