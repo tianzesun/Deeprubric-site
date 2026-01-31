@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { LogOut } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export const LogoutButton = () => {
@@ -26,11 +27,7 @@ export const LogoutButton = () => {
       className="w-full flex items-center gap-4 px-4 py-4 rounded-2xl cursor-pointer transition-all text-slate-400 hover:text-rose-500 group"
     >
       <div className="p-2 rounded-xl group-hover:bg-rose-50 dark:group-hover:bg-rose-500/10 transition-colors">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M16 17l5-5-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M21 12H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        <LogOut size={20} />
       </div>
       <span className="font-bold text-sm">Sign Out</span>
     </motion.button>

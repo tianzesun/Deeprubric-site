@@ -17,7 +17,8 @@
       "@deeprubric/ui/*": ["src/*"]
     },
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": false,
+    "types": ["react"]
   },
   "include": [
     "src/**/*.ts",

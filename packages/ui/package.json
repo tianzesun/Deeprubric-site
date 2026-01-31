@@ -30,15 +30,12 @@
     "lint": "eslint \"src/**/*.ts*\" --fix"
   },
   "peerDependencies": {
-    "react": ">=18 <20",
-    "react-dom": ">=18 <20",
+    "react": "18.x",
+    "react-dom": "18.x",
     "tailwindcss": ">=3.4"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "typescript": "^5.4.0",
-    "eslint": "^9.0.0"
+    "typescript": "^5"
   },
   "dependencies": {
     "lucide-react": "^0.563.0"
