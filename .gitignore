@@ -1,0 +1,49 @@
+###############
+# Core Secrets (NEVER COMMIT)
+###############
+.env
+.env.*
+!.env.example    # <== This "!" tells Git: "Do NOT ignore this specific file"
+*.pem
+*.key
+
+###############
+# Monorepo & Build (Turborepo / Next.js)
+###############
+node_modules/
+.next/
+.turbo/
+dist/
+build/
+.cache/
+pnpm-debug.log
+
+###############
+# Infrastructure (Keep these!)
+###############
+# We REMOVED Dockerfile and docker-compose from here 
+# so they CAN be committed.
+.docker/
+# But we DO ignore local data volumes
+postgres_data/
+redis_data/
+
+###############
+# OS & IDE
+###############
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+###############
+# Testing & Coverage
+###############
+coverage/
+test-results/
+.pytest_cache/
+__pycache__/
+
+log/
+*.log

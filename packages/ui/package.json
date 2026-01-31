@@ -1,0 +1,46 @@
+{
+  "name": "@deeprubric/ui",
+  "version": "1.0.0",
+  "private": true,
+  "sideEffects": [
+    "**/*.css",
+    "**/*.tsx",
+    "**/ActionButton.js",
+    "**/index.js"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "default": "./dist/components/*.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --declaration --outDir dist && tsc",
+    "prepare": "pnpm run build",
+    "lint": "eslint \"src/**/*.ts*\" --fix"
+  },
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20",
+    "tailwindcss": ">=3.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.4.0",
+    "eslint": "^9.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.563.0"
+  }
+}

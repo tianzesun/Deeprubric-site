@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    /* 基础编译选项 */
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "strict": true,
+    
+    /* 性能与安全 */
+    "noEmit": true,
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    
+    /* Monorepo 核心配置 */
+    "composite": true,          // 开启复合工程，加速跨包类型检查
+    "declaration": true,        // 生成声明文件
+    "declarationMap": true,     // 开启声明文件映射，方便跳转源码
+    "baseUrl": ".",
+    
+    "paths": {
+      /* 跨包全局别名：指向各包的 src 目录 */
+      "@deeprubric/ui": ["packages/ui/src"],
+      "@deeprubric/ui/*": ["packages/ui/src/*"],
+      "@deeprubric/types": ["packages/types/src"],
+      "@deeprubric/types/*": ["packages/types/src/*"]
+    }
+  },
+  "include": [], // 根配置文件不直接包含源码
+  "exclude": ["node_modules", "dist", "build"],
+  
+  /* 项目引用：将子项目关联起来 */
+  "references": [
+    { "path": "apps/frontend" },
+    { "path": "packages/ui" }
+    // 如果之后增加了 packages/types，记得在这里添加
+  ]
+}

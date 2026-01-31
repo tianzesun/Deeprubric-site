@@ -1,0 +1,42 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    /* 1. 继承根配置，覆盖 Next.js 特有需求 */
+	"incremental": true,           // 开启增量编译，提升开发环境二次启动速度
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "jsx": "preserve",              // Next.js 需要 preserve，由 SWC 处理编译
+    "strict": true,                 // 2026 年标准：强制开启严格模式，避免低级 Bug
+    "noEmit": true,
+    
+    /* 2. 路径别名 */
+    "paths": {
+      "@/*": ["./src/*"],           // 注意：通常源码在 src 下，如果不在 src，请改为 ["./*"]
+      "@/features/*": ["./src/features/*"],
+      /* 跨包引用已在根目录定义，这里会自动继承，无需重复编写 */
+      "@deeprubric/ui": ["../../packages/ui/src"],
+      "@deeprubric/ui/*": ["../../packages/ui/src/*"]
+    },
+
+    /* 3. Next.js 特有插件 */
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../packages/ui/src/**/*.ts", // 包含引用的 UI 包源码以支持实时热更新
+    "../../packages/ui/src/**/*.tsx"
+  ],
+  "exclude": ["node_modules"],
+  
+  /* 4. 建立项目引用关系 */
+  "references": [
+    { "path": "../../packages/ui" }
+  ]
+}
