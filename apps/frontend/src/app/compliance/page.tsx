@@ -122,8 +122,8 @@ export default function CompliancePage() {
                   <Globe2 size={20} className="text-indigo-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">FERPA Compliance</h3>
-                  <p className="text-slate-600">Full compliance with Family Educational Rights and Privacy Act ensuring student data protection in the US.</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Global Compliance</h3>
+                  <p className="text-slate-600">Full compliance with international data protection regulations ensuring user data protection worldwide.</p>
                 </div>
               </div>
               

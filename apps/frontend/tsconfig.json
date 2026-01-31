@@ -12,7 +12,8 @@
     /* 2. 路径别名 */
     "paths": {
       "@/*": ["./src/*"],           // 注意：通常源码在 src 下，如果不在 src，请改为 ["./*"]
-      "@/features/*": ["./src/features/*"],
+      "@/features/*": ["src/features/*"],
+      "@/app/*": ["src/app/*"],
       /* 跨包引用已在根目录定义，这里会自动继承，无需重复编写 */
       "@deeprubric/ui": ["../../packages/ui/src"],
       "@deeprubric/ui/*": ["../../packages/ui/src/*"]

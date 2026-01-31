@@ -30,8 +30,8 @@
     "lint": "eslint \"src/**/*.ts*\" --fix"
   },
   "peerDependencies": {
-    "react": "18.x",
-    "react-dom": "18.x",
+    "react": "19.x",
+    "react-dom": "19.x",
     "tailwindcss": ">=3.4"
   },
   "devDependencies": {

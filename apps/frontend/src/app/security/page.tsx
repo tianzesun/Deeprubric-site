@@ -35,8 +35,8 @@ const SecurityPage = () => {
       icon: LockKeyhole
     },
     {
-      question: "Is DeepRubric FERPA compliant?",
-      answer: "Yes, our platform is designed to meet FERPA requirements for protecting student educational records. We never share student data with third parties for marketing.",
+      question: "Is DeepRubric compliant with data protection regulations?",
+      answer: "Yes, our platform is designed to meet global data protection requirements. We never share user data with third parties for marketing purposes.",
       icon: BadgeCheck
     },
     {

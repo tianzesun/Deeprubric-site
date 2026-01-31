@@ -7,21 +7,14 @@ import {
   Sparkles, 
   Menu, 
   X,
-  ArrowRight,
-  Zap,
-  Users,
-  Brain
+  ArrowRight
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Products', href: '#', dropdown: [
-      { name: 'For Professors', href: '/professor/dashboard', icon: Brain },
-      { name: 'For Graders', href: '/grader/dashboard', icon: Users },
-      { name: 'For Students', href: '/student/dashboard', icon: Zap }
-    ]},
+    { name: 'Features', href: '/features' },
     { name: 'Security', href: '/security' },
     { name: 'Compliance', href: '/compliance' },
     { name: 'Support', href: '/support' }
@@ -58,35 +51,13 @@ export const Header: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group relative"
               >
-                {item.dropdown ? (
-                  <>
-                    <button className="text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all relative group">
-                      {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-                    </button>
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                      {item.dropdown.map((subItem, subIndex) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.href}
-                          className="flex items-center gap-3 px-4 py-3 text-sm text-slate-600 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          <subItem.icon size={16} className="text-indigo-500" />
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all relative group"
-                  >
-                    {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-                  </Link>
-                )}
+                <Link
+                  href={item.href}
+                  className="text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all relative group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
+                </Link>
               </motion.div>
             ))}
           </nav>
@@ -98,10 +69,10 @@ export const Header: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Link
-              href="/login"
+              href="/features"
               className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-2xl font-black text-sm hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2"
             >
-              Get Started
+              Explore Features
               <ArrowRight size={16} />
             </Link>
           </motion.div>
@@ -126,46 +97,22 @@ export const Header: React.FC = () => {
         >
           <div className="py-4 space-y-2">
             {navigation.map((item, index) => (
-              <div key={item.name} className="space-y-1">
-                {item.dropdown ? (
-                  <>
-                    <button className="w-full text-left px-4 py-3 text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all">
-                      {item.name}
-                    </button>
-                    <div className="pl-6 space-y-1">
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.href}
-                          className="block px-4 py-2 text-sm text-slate-500 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          <div className="flex items-center gap-2">
-                            <subItem.icon size={16} className="text-indigo-500" />
-                            {subItem.name}
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-3 text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-3 text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
             <div className="border-t border-slate-200 dark:border-slate-700 mt-2 pt-2">
               <Link
-                href="/login"
+                href="/features"
                 className="block mx-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-2xl font-black text-sm text-center hover:from-indigo-700 hover:to-purple-700 transition-all"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Started
+                Explore Features
               </Link>
             </div>
           </div>

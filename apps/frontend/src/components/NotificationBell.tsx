@@ -230,32 +230,32 @@ export const mockNotifications: Notification[] = [
   {
     id: '1',
     type: 'success',
-    title: 'Assignment Graded',
-    message: 'Your submission for CS101 Assignment 3 has been graded.',
+    title: 'Platform Update',
+    message: 'New features have been added to enhance your experience.',
     timestamp: new Date(Date.now() - 1000 * 60 * 5),
     read: false
   },
   {
     id: '2',
     type: 'info',
-    title: 'New Rubric Available',
-    message: 'A new rubric has been created for your course.',
+    title: 'Security Enhancement',
+    message: 'Enhanced security measures have been implemented.',
     timestamp: new Date(Date.now() - 1000 * 60 * 30),
     read: false
   },
   {
     id: '3',
     type: 'warning',
-    title: 'Deadline Approaching',
-    message: 'Assignment 4 is due in 2 hours.',
+    title: 'System Maintenance',
+    message: 'Scheduled maintenance will occur tonight.',
     timestamp: new Date(Date.now() - 1000 * 60 * 60),
     read: true
   },
   {
     id: '4',
     type: 'error',
-    title: 'Upload Failed',
-    message: 'Failed to upload your assignment. Please try again.',
+    title: 'Service Unavailable',
+    message: 'Some features may be temporarily unavailable. Please try again later.',
     timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2),
     read: true
   }

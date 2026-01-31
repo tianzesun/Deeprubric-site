@@ -46,7 +46,7 @@ const MaintenanceMode = ({ estimatedBackTime = "2:00 PM EST" }) => {
       const targetTime = new Date();
       targetTime.setHours(14, 0, 0, 0); // 2:00 PM
 
-      const diff = targetTime - now;
+      const diff = targetTime.getTime() - now.getTime();
       if (diff > 0) {
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -236,37 +236,37 @@ const MaintenanceMode = ({ estimatedBackTime = "2:00 PM EST" }) => {
                 <p>• All grade state machines are locked and immutable</p>
                 <p>• No data modifications are possible during maintenance</p>
                 <p>• Your assignments and grades are preserved exactly as they were</p>
-                <p>• FERPA compliance is actively maintained throughout</p>
+                <p>• Data protection compliance is actively maintained throughout</p>
               </div>
             </motion.div>
 
-            {/* Contact and Status Links */}
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+          {/* Contact and Status Links */}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <motion.a 
+              href="https://status.deeprubric.com"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <motion.a 
-                href="https://status.deeprubric.com"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ExternalLink size={18} className="mr-2" />
-                Check Live Status Page
-              </motion.a>
+              <ExternalLink size={18} className="mr-2" />
+              Check Live Status Page
+            </motion.a>
 
-              <motion.a 
-                href="mailto:support@deeprubric.com?subject=Maintenance Inquiry"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-900 text-white font-semibold rounded-xl hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border border-slate-600"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Mail size={18} className="mr-2" />
-                Contact Support
-              </motion.a>
-            </motion.div>
+            <motion.a 
+              href="mailto:support@deeprubric.com?subject=Maintenance Inquiry"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-900 text-white font-semibold rounded-xl hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border border-slate-600"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail size={18} className="mr-2" />
+              Contact Support
+            </motion.a>
+          </motion.div>
 
             {/* Footer Message */}
             <motion.div 

@@ -185,28 +185,6 @@ export default function Custom404() {
             <h3 className="text-sm font-semibold text-slate-300 mb-4">Popular Pages</h3>
             <div className="grid grid-cols-2 gap-3">
               <motion.a 
-                href="/professor/dashboard"
-                className="p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-300 text-center group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="flex items-center justify-center mb-2">
-                  <GraduationCapIcon size={16} className="text-indigo-400 group-hover:text-indigo-300 transition-colors" />
-                </div>
-                <div className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Professor Dashboard</div>
-              </motion.a>
-              <motion.a 
-                href="/student/dashboard"
-                className="p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-300 text-center group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="flex items-center justify-center mb-2">
-                  <User size={16} className="text-emerald-400 group-hover:text-emerald-300 transition-colors" />
-                </div>
-                <div className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Student Dashboard</div>
-              </motion.a>
-              <motion.a 
                 href="/features"
                 className="p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-300 text-center group"
                 whileHover={{ scale: 1.02 }}
@@ -218,13 +196,35 @@ export default function Custom404() {
                 <div className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Features</div>
               </motion.a>
               <motion.a 
+                href="/security"
+                className="p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-300 text-center group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex items-center justify-center mb-2">
+                  <ShieldIcon size={16} className="text-emerald-400 group-hover:text-emerald-300 transition-colors" />
+                </div>
+                <div className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Security</div>
+              </motion.a>
+              <motion.a 
+                href="/compliance"
+                className="p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-300 text-center group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex items-center justify-center mb-2">
+                  <CheckIcon size={16} className="text-blue-400 group-hover:text-blue-300 transition-colors" />
+                </div>
+                <div className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Compliance</div>
+              </motion.a>
+              <motion.a 
                 href="/support"
                 className="p-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-sm hover:from-slate-700/50 hover:to-slate-800/50 transition-all duration-300 text-center group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center justify-center mb-2">
-                  <MessageSquare size={16} className="text-blue-400 group-hover:text-blue-300 transition-colors" />
+                  <MessageSquare size={16} className="text-indigo-400 group-hover:text-indigo-300 transition-colors" />
                 </div>
                 <div className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">Support</div>
               </motion.a>

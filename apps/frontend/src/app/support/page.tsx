@@ -53,7 +53,7 @@ export default function SupportPage() {
       items: [
         { title: 'Critical Issues', desc: 'System outages and urgent problems', link: 'tel:+15559990000', icon: AlertCircle, badge: '24/7' },
         { title: 'Security Issues', desc: 'Report security vulnerabilities', link: 'mailto:security@deeprubric.com', icon: Shield },
-        { title: 'After Hours', desc: 'Emergency support for enterprise', link: 'mailto:emergency@deeprubric.com', icon: Clock }
+        { title: 'Business Hours', desc: 'Standard support during business hours', link: 'mailto:support@deeprubric.com', icon: Clock }
       ]
     }
   ];

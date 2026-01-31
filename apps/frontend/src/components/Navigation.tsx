@@ -58,7 +58,7 @@ export const Navigation: React.FC = () => {
           {/* Desktop Actions */}
           <div className="hidden md:flex md:items-center md:space-x-4">
             <a
-              href="/login"
+              href="/features"
               className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors duration-200 shadow-sm"
             >
               Get Started

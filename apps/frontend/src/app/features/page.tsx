@@ -187,7 +187,7 @@ export default function FeaturesPage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <span className="block">Academic</span>
+            <span className="block">Professional</span>
             <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Excellence
             </span>
@@ -393,7 +393,7 @@ export default function FeaturesPage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-pink-300 transition-colors">Insightful Analytics</h3>
-                  <p className="text-slate-300 text-lg leading-relaxed">Comprehensive dashboards that provide deep insights into student progress, class performance, and institutional outcomes.</p>
+                  <p className="text-slate-300 text-lg leading-relaxed">Comprehensive analytics that provide deep insights into student progress, class performance, and institutional outcomes.</p>
                 </div>
               </motion.div>
               

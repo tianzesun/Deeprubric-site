@@ -30,10 +30,9 @@ export default function CookiesPage() {
   const cookiePolicyContent = `
     Cookies are small text files placed on your device to store data that can be recalled by a web server in the domain that placed the cookie. We use cookies and similar technologies for storing and honoring your preferences and settings, enabling you to sign in, and analyzing how our services perform.
     
-    DeepRubric uses cookies to provide a seamless grading experience. These technologies help us understand user behavior, tell us which parts of our website people have visited, and facilitate and measure the effectiveness of our platform features.
+    DeepRubric uses cookies to provide a seamless professional experience. These technologies help us understand user behavior, tell us which parts of our website people have visited, and facilitate and measure the effectiveness of our platform features.
     
     Essential cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as:
-    Authentication: Keeping you signed into your DeepRubric account.
     Security: Detecting and preventing malicious activity.
     Preferences: Remembering your privacy and cookie settings.
     
@@ -72,13 +71,6 @@ export default function CookiesPage() {
             </div>
           </div>
           
-          {/* Sign In Button */}
-          <a 
-            href="/login" 
-            className="px-4 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50 rounded-lg transition-all border border-indigo-200"
-          >
-            Sign In
-          </a>
         </div>
       </header>
 
