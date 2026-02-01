@@ -43,20 +43,6 @@ export const Footer: React.FC = () => {
             Security
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
           </Link>
-          <Link 
-            href="/compliance" 
-            className="hover:text-indigo-500 transition-colors duration-300 relative group"
-          >
-            Compliance
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-          </Link>
-          <Link 
-            href="/contact" 
-            className="hover:text-indigo-500 transition-colors duration-300 relative group"
-          >
-            Contact
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-          </Link>
         </motion.div>
         
         <motion.div 
