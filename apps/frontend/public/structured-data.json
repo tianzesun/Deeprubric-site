@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "DeepRubric",
+  "alternateName": "DeepRubric AI",
+  "url": "https://deeprubric.ai",
+  "logo": "https://deeprubric.ai/images/logo.png",
+  "description": "Human-in-the-Loop Assessment Architecture for Institutions. Advanced grading, curriculum management, and assessment tools for educational institutions.",
+  "foundingDate": "2026",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "DeepRubric Team"
+    }
+  ],
+  "sameAs": [
+    "https://twitter.com/DeepRubricAI",
+    "https://github.com/DeepRubric",
+    "https://linkedin.com/company/deeprubric"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "protocol@deeprubric.ai",
+    "availableLanguage": ["English"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Educational Software",
+    "description": "Professional academic grading and assessment platform for institutions",
+    "availability": "https://schema.org/InStock"
+  },
+  "keywords": "academic grading, assessment platform, educational technology, grading software, curriculum management, rubric assessment, institutional grading, FERPA compliant, educational software, grading automation"
+}
