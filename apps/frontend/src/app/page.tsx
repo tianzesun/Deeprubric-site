@@ -91,16 +91,6 @@ export default function HomePage() {
             </div>
           </div>
           
-          {/* Scroll Hint */}
-          <div className="mt-12 flex justify-center">
-            <Link 
-              href="/features" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-bold rounded-full hover:bg-indigo-700 transition-all shadow-lg"
-            >
-              Explore Features
-              <ArrowRight size={20} />
-            </Link>
-          </div>
         </section>
 
         {/* --- LIVE NEURAL LOGS --- */}
