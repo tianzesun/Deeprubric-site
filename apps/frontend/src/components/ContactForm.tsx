@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useActionState } from 'react'; // Renamed and moved to 'react'
-import { useFormStatus } from 'react-dom';
+import React, { useState } from 'react'; // Renamed and moved to 'react'
+
+import { useFormStatus, useFormState } from 'react-dom';
 import { Send, Loader2, CheckCircle2, X, School, User } from 'lucide-react';
 import { submitContactForm } from '../app/actions/contact';
 
@@ -30,8 +31,8 @@ function SubmitButton() {
 }
 
 export const ContactForm: React.FC = () => {
-  // useActionState is the official replacement for useFormState
-  const [state, formAction] = useActionState(submitContactForm, null);
+  // useFormState is the correct hook from react-dom
+  const [state, formAction] = useFormState(submitContactForm, null);
 
   if (state?.success) {
     return (
