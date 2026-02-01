@@ -17,7 +17,7 @@ import {
   Building2, DollarSign, AlertCircle, Check as CheckIcon, UserPlus, Scale
 } from 'lucide-react';
 
-const MaintenanceMode = ({ estimatedBackTime = "2:00 PM EST" }) => {
+export default function MaintenanceMode({ estimatedBackTime = "2:00 PM EST" }) {
   const router = useRouter();
   const [progress, setProgress] = useState(0);
   const [timeRemaining, setTimeRemaining] = useState('');
@@ -285,6 +285,4 @@ const MaintenanceMode = ({ estimatedBackTime = "2:00 PM EST" }) => {
       </div>
     </div>
   );
-};
-
-export default MaintenanceMode;
+}
