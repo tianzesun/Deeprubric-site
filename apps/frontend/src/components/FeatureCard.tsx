@@ -10,10 +10,10 @@ interface FeatureProps {
 }
 
 const iconMap = {
-  lock: <Lock className="text-blue-500" />,
-  globe: <Globe className="text-emerald-500" />,
-  shield: <Shield className="text-indigo-500" />,
-  server: <Server className="text-amber-500" />,
+  lock: <Lock className="text-indigo-500 dark:text-indigo-400 w-5 h-5" />,
+  globe: <Globe className="text-indigo-500 dark:text-indigo-400 w-5 h-5" />,
+  shield: <Shield className="text-indigo-500 dark:text-indigo-400 w-5 h-5" />,
+  server: <Server className="text-indigo-500 dark:text-indigo-400 w-5 h-5" />,
 };
 
 export const FeatureCard: React.FC<FeatureProps> = ({ title, description, iconType, index }) => {
@@ -22,14 +22,14 @@ export const FeatureCard: React.FC<FeatureProps> = ({ title, description, iconTy
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -5 }}
-      className="p-6 bg-white/70 backdrop-blur-md border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-all"
+      viewport={{ once: true }}
+      className="p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-slate-300 dark:hover:border-slate-700 transition-all"
     >
-      <div className="mb-4 p-3 w-fit rounded-xl bg-slate-50">
+      <div className="mb-3 p-2.5 w-fit rounded-lg bg-indigo-100 dark:bg-indigo-900/50">
         {iconMap[iconType]}
       </div>
-      <h3 className="font-bold text-slate-900">{title}</h3>
-      <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mt-1">
+      <h3 className="font-semibold text-slate-900 dark:text-white">{title}</h3>
+      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
         {description}
       </p>
     </motion.div>

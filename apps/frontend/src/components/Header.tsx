@@ -21,42 +21,40 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-3"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <Sparkles className="text-white" size={20} />
+            <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <Sparkles className="text-white" size={18} />
             </div>
-            <Link href="/">
-              <h1 className="text-xl font-black tracking-tighter bg-gradient-to-r from-slate-900 to-indigo-600 dark:from-white dark:to-indigo-400 bg-clip-text text-transparent">
+            <Link href="/" className="flex items-center">
+              <span className="text-lg font-bold text-slate-900 dark:text-white">
                 DeepRubric
-              </h1>
+              </span>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navigation.map((item, index) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative"
               >
                 <Link
                   href={item.href}
-                  className="text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all relative group"
+                  className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
                 </Link>
               </motion.div>
             ))}
@@ -67,12 +65,13 @@ export const Header: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            className="hidden md:flex items-center gap-3"
           >
             <Link
-              href="/features"
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-2xl font-black text-sm hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2"
+              href="/#contact"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium text-sm transition-all shadow-sm"
             >
-              Explore Features
+              Request Demo
               <ArrowRight size={16} />
             </Link>
           </motion.div>
@@ -81,7 +80,7 @@ export const Header: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+              className="p-2 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -93,26 +92,26 @@ export const Header: React.FC = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: isMenuOpen ? 1 : 0, height: isMenuOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden border-t border-slate-200 dark:border-slate-700"
+          className="md:hidden overflow-hidden border-t border-slate-200 dark:border-slate-800"
         >
-          <div className="py-4 space-y-2">
-            {navigation.map((item, index) => (
+          <div className="py-4 space-y-1">
+            {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-3 text-sm font-black text-slate-600 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all"
+                className="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="border-t border-slate-200 dark:border-slate-700 mt-2 pt-2">
+            <div className="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800">
               <Link
-                href="/features"
-                className="block mx-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-2xl font-black text-sm text-center hover:from-indigo-700 hover:to-purple-700 transition-all"
+                href="/#contact"
+                className="block mx-4 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-medium text-sm text-center transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Explore Features
+                Request Demo
               </Link>
             </div>
           </div>
