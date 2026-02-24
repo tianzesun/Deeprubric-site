@@ -155,7 +155,7 @@ export default function HomePage() {
                       animate={{ opacity: 1, y: 0 }} 
                       exit={{ opacity: 0, y: -20 }} 
                       transition={{ duration: 0.5 }}
-                      className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 absolute left-0 right-0"
+                      className="text-emerald-600 dark:text-emerald-400 absolute left-0 right-0"
                     >
                       {words[index]}
                     </motion.span>
