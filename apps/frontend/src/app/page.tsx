@@ -1,28 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
   ArrowRight, GraduationCap, ClipboardCheck,
   BookOpen, Mail, MessageSquare, CheckCircle2,
-  Play, Quote, Star, ShieldCheck,
+  Play, ShieldCheck,
   GitBranch, RefreshCw, Eye, Sparkles,
   Network, Brain, Award, AlertTriangle,
-  FileText, Zap, BarChart3, Search
+  FileText, Users, Clock
 } from 'lucide-react';
 import { FeatureCard } from '../components/FeatureCard';
 import { ContactForm } from '../components/ContactForm';
 
 export default function HomePage() {
-  const [index, setIndex] = useState(0);
-
-  const words = ["Faster", "Fairer", "Smarter"];
-  
-  useEffect(() => {
-    const wordInterval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
-    return () => clearInterval(wordInterval);
-  }, []);
 
   const stats = [
     { value: "85%", label: "Time Saved", description: "On routine grading tasks" },
@@ -97,27 +89,24 @@ export default function HomePage() {
     }
   ];
 
-  const testimonials = [
+  const useCases = [
     {
-      quote: "The AI feedback drafts are genuinely good — detailed, rubric-aligned, and specific. I spend maybe 10 minutes reviewing 30 essays instead of an entire weekend.",
-      author: "Dr. Sarah Chen",
-      role: "Computer Science Professor",
-      rating: 5,
-      highlight: "Early Adopter"
+      icon: <FileText className="w-6 h-6" />,
+      title: "Essay Grading at Scale",
+      description: "English instructor with 150 students per semester. Previously spent 6 hours per grading session. Now spends 45 minutes reviewing AI suggestions.",
+      metric: "87% time reduction"
     },
     {
-      quote: "The academic integrity report caught three AI-generated submissions I would have missed. Having plagiarism and AI detection in one place is a game changer.",
-      author: "Prof. Michael Rodriguez",
-      role: "English Department Faculty",
-      rating: 5,
-      highlight: "Integrity Detection"
+      icon: <AlertTriangle className="w-6 h-6" />,
+      title: "AI Plagiarism Detection",
+      description: "Computer science TA noticed suspicious code patterns. DeepRubric's integrity check flagged 12 submissions with AI-generated content that matched no existing database.",
+      metric: "12 incidents caught"
     },
     {
-      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is genuinely impressed.",
-      author: "Dr. Emily Watson",
-      role: "Assessment Director",
-      rating: 5,
-      highlight: "Accreditation Ready"
+      icon: <Network className="w-6 h-6" />,
+      title: "Accreditation Reporting",
+      description: "Nursing program needed to map 400+ student assignments to 23 learning outcomes for accreditation. Generated complete report in under an hour.",
+      metric: "3 weeks → 1 hour"
     }
   ];
 
@@ -160,24 +149,11 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
               >
-                <span className="relative inline-block h-[1.2em]">
-                  <AnimatePresence mode="wait">
-                    <motion.span 
-                      key={words[index]} 
-                      initial={{ opacity: 0, y: 20 }} 
-                      animate={{ opacity: 1, y: 0 }} 
-                      exit={{ opacity: 0, y: -20 }} 
-                      transition={{ duration: 0.5 }}
-                      className="text-emerald-600 dark:text-emerald-400 absolute left-0 right-0"
-                    >
-                      {words[index]}
-                    </motion.span>
-                  </AnimatePresence>
-                </span>
+                <span className="text-emerald-600 dark:text-emerald-400">AI Grades Your Papers.</span>
                 <br />
-                <span className="text-slate-600 dark:text-slate-400">Grading, Powered by AI</span>
+                <span className="text-slate-700 dark:text-slate-300">You Review the Results.</span>
               </motion.h1>
 
               <motion.p 
@@ -448,7 +424,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- TESTIMONIALS SECTION --- */}
+        {/* --- USE CASES SECTION --- */}
         <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-950">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -459,7 +435,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
               >
-                Educators Love the Difference
+                Real Problems, Solved
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -468,12 +444,12 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-lg text-slate-600 dark:text-slate-400"
               >
-                Real stories from professors who switched to DeepRubric
+                How educators are actually using DeepRubric
               </motion.p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, i) => (
+              {useCases.map((useCase, i) => (
                 <motion.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -482,31 +458,35 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm"
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-1">
-                      {[...Array(testimonial.rating)].map((_, j) => (
-                        <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                      ))}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                      {useCase.icon}
                     </div>
-                    <span className="text-xs font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 px-2 py-1 rounded-full">
-                      {testimonial.highlight}
+                    <span className="px-3 py-1 text-xs font-bold bg-emerald-600 text-white rounded-full">
+                      {useCase.metric}
                     </span>
                   </div>
-                  <Quote className="w-8 h-8 text-emerald-200 dark:text-emerald-800 mb-3" />
-                  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed italic">
-                    "{testimonial.quote}"
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+                    {useCase.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    {useCase.description}
                   </p>
-                  <div className="border-t border-slate-100 dark:border-slate-800 pt-4">
-                    <p className="font-semibold text-slate-900 dark:text-white">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
-                      {testimonial.role}
-                    </p>
-                  </div>
                 </motion.div>
               ))}
             </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              viewport={{ once: true }}
+              className="mt-12 text-center"
+            >
+              <p className="text-sm text-slate-500 dark:text-slate-400 italic">
+                These examples are based on common educator workflows. Your results may vary based on course size and rubric complexity.
+              </p>
+            </motion.div>
           </div>
         </section>
 
