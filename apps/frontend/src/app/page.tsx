@@ -651,7 +651,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 dark:text-slate-400">Email us at</p>
-                      <p className="font-semibold text-slate-900 dark:text-white">contact@deeprubric.edu</p>
+                      <p className="font-semibold text-slate-900 dark:text-white">contact@deeprubric.ai</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
