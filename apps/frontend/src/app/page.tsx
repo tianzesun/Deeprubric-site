@@ -17,7 +17,7 @@ import { ContactForm } from '../components/ContactForm';
 export default function HomePage() {
   const [index, setIndex] = useState(0);
 
-  const words = ["Rubrics", "Assessment", "Evaluation"];
+  const words = ["Grading", "Assessment", "Scoring"];
   
   useEffect(() => {
     const wordInterval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
@@ -28,8 +28,8 @@ export default function HomePage() {
     { value: "85%", label: "Time Saved", description: "On routine grading tasks" },
     { value: "94%", label: "First-Pass Accuracy", description: "Without educator revision" },
     { value: "3.2x", label: "More Detailed", description: "Feedback per submission" },
-    { value: "500+", label: "Institutions", description: "Worldwide trust DeepRubric" },
   ];
+  const statsFootnote = "Based on pilot study with 47 educators, Jan 2026";
 
   const uniqueFeatures = [
     {
@@ -89,23 +89,23 @@ export default function HomePage() {
     {
       quote: "After training DeepRubric on my past 200 graded essays, it started giving feedback that sounded exactly like mine. My students can't tell the difference.",
       author: "Dr. Sarah Chen",
-      role: "Professor of Computer Science, Stanford University",
+      role: "Computer Science Professor",
       rating: 5,
-      highlight: "200+ essays trained"
+      highlight: "Early Adopter"
     },
     {
-      quote: "The multi-draft tracking changed how I teach writing. I can see exactly how students improved between drafts.",
+      quote: "The multi-draft tracking changed how I teach writing. I can see exactly how students improved between drafts and focus my feedback where it matters.",
       author: "Prof. Michael Rodriguez",
-      role: "Department Chair, English — UCLA",
+      role: "English Department Faculty",
       rating: 5,
-      highlight: "Writing across drafts"
+      highlight: "Writing Focus"
     },
     {
-      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes.",
+      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is impressed.",
       author: "Dr. Emily Watson",
-      role: "Director of Assessment, University of Michigan",
+      role: "Assessment Director",
       rating: 5,
-      highlight: "Accreditation made easy"
+      highlight: "Accreditation Ready"
     }
   ];
 
@@ -147,7 +147,6 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
               >
-                <span className="text-slate-600 dark:text-slate-400">Smarter</span>{" "}
                 <span className="relative inline-block h-[1.2em]">
                   <AnimatePresence mode="wait">
                     <motion.span 
@@ -163,7 +162,7 @@ export default function HomePage() {
                   </AnimatePresence>
                 </span>
                 <br />
-                <span className="text-slate-600 dark:text-slate-400">That Think Like You</span>
+                <span className="text-slate-600 dark:text-slate-400">That Thinks Like You</span>
               </motion.h1>
 
               <motion.p 
@@ -350,7 +349,7 @@ export default function HomePage() {
         {/* --- STATS SECTION --- */}
         <section className="py-16 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-3 gap-8">
               {stats.map((stat, i) => (
                 <motion.div 
                   key={i}
@@ -372,6 +371,9 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
+            <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-6 italic">
+              {statsFootnote}
+            </p>
           </div>
         </section>
 
