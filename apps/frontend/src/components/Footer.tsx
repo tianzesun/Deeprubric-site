@@ -18,8 +18,8 @@ export const Footer: React.FC = () => {
               </div>
               <span className="font-bold text-slate-900 dark:text-white">DeepRubric</span>
             </div>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              AI-powered assessment platform for modern education.
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+              Assessment platform that learns how you grade.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold text-slate-900 dark:text-white mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li><a href="mailto:contact@deeprubric.ai" className="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">contact@deeprubric.ai</a></li>
+              <li><a href="mailto:contact@deeprubric.edu" className="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">contact@deeprubric.edu</a></li>
               <li><Link href="/#contact" className="text-sm text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Request Demo</Link></li>
             </ul>
           </div>

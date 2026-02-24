@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
   ArrowRight, Users, GraduationCap, ClipboardCheck,
-  Clock, FileCheck, Zap, BookOpen, TrendingUp,
+  Clock, FileCheck, Zap, BookOpen,
   Mail, MessageSquare, CheckCircle2, BarChart3,
   Target, Play, Quote, Star, ShieldCheck,
-  Layers, GitBranch, RefreshCw, Eye, Sparkles,
-  FileSearch, Network, Settings2, Brain
+  GitBranch, RefreshCw, Eye, Sparkles,
+  Network, Brain, Award
 } from 'lucide-react';
 import { FeatureCard } from '../components/FeatureCard';
 import { ContactForm } from '../components/ContactForm';
@@ -17,7 +17,7 @@ import { ContactForm } from '../components/ContactForm';
 export default function HomePage() {
   const [index, setIndex] = useState(0);
 
-  const words = ["Rubric", "Assessment", "Evaluation"];
+  const words = ["Rubrics", "Assessment", "Evaluation"];
   
   useEffect(() => {
     const wordInterval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
@@ -27,7 +27,7 @@ export default function HomePage() {
   const stats = [
     { value: "85%", label: "Time Saved", description: "On routine grading tasks" },
     { value: "94%", label: "First-Pass Accuracy", description: "Without educator revision" },
-    { value: "3.2x", label: "Feedback Detail", description: "More specific comments" },
+    { value: "3.2x", label: "More Detailed", description: "Feedback per submission" },
     { value: "500+", label: "Institutions", description: "Worldwide trust DeepRubric" },
   ];
 
@@ -89,33 +89,33 @@ export default function HomePage() {
     {
       quote: "After training DeepRubric on my past 200 graded essays, it started giving feedback that sounded exactly like mine. My students can't tell the difference.",
       author: "Dr. Sarah Chen",
-      role: "Professor of Computer Science",
-      institution: "Stanford University",
-      rating: 5
+      role: "Professor of Computer Science, Stanford University",
+      rating: 5,
+      highlight: "200+ essays trained"
     },
     {
-      quote: "The multi-draft tracking changed how I teach writing. I can see exactly how students improved between drafts and focus my feedback where it matters.",
+      quote: "The multi-draft tracking changed how I teach writing. I can see exactly how students improved between drafts.",
       author: "Prof. Michael Rodriguez",
-      role: "Department Chair, English",
-      institution: "UCLA",
-      rating: 5
+      role: "Department Chair, English — UCLA",
+      rating: 5,
+      highlight: "Writing across drafts"
     },
     {
-      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is impressed.",
+      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes.",
       author: "Dr. Emily Watson",
-      role: "Director of Assessment",
-      institution: "University of Michigan",
-      rating: 5
+      role: "Director of Assessment, University of Michigan",
+      rating: 5,
+      highlight: "Accreditation made easy"
     }
   ];
 
   const comparisonFeatures = [
-    { feature: "Learns your grading style", deeprubric: true, others: false },
-    { feature: "Multi-draft version tracking", deeprubric: true, others: false },
-    { feature: "Explainable scoring rationale", deeprubric: true, others: false },
-    { feature: "Learning outcome mapping", deeprubric: true, others: false },
-    { feature: "Basic rubric scoring", deeprubric: true, others: true },
-    { feature: "LMS integration", deeprubric: true, others: true },
+    { feature: "Learns your grading style", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
+    { feature: "Multi-draft version tracking", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: true },
+    { feature: "Explainable scoring rationale", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
+    { feature: "Learning outcome mapping", deeprubric: true, gradescope: true, crowdmark: false, feedbackfruits: true },
+    { feature: "Basic rubric scoring", deeprubric: true, gradescope: true, crowdmark: true, feedbackfruits: true },
+    { feature: "LMS integration", deeprubric: true, gradescope: true, crowdmark: true, feedbackfruits: true },
   ];
 
   const integrations = [
@@ -147,9 +147,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
               >
-                Grading That
-                <br />
-                <span className="relative inline-block h-[1.2em] mx-2">
+                <span className="text-slate-600 dark:text-slate-400">Smarter</span>{" "}
+                <span className="relative inline-block h-[1.2em]">
                   <AnimatePresence mode="wait">
                     <motion.span 
                       key={words[index]} 
@@ -163,7 +162,8 @@ export default function HomePage() {
                     </motion.span>
                   </AnimatePresence>
                 </span>
-                <span className="text-slate-600 dark:text-slate-400">Like You</span>
+                <br />
+                <span className="text-slate-600 dark:text-slate-400">That Think Like You</span>
               </motion.h1>
 
               <motion.p 
@@ -187,7 +187,7 @@ export default function HomePage() {
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30"
                 >
-                  Train Your Own Model — Free Trial
+                  Start Free Trial
                   <ArrowRight size={18} />
                 </Link>
                 <Link 
@@ -258,7 +258,7 @@ export default function HomePage() {
 
         {/* --- COMPARISON TABLE --- */}
         <section className="py-20 md:py-28 px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -266,7 +266,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
               >
-                Feature Comparison
+                How We Compare
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -285,42 +285,64 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg"
             >
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-slate-50 dark:bg-slate-800">
-                    <th className="text-left px-6 py-4 text-sm font-semibold text-slate-900 dark:text-white">Feature</th>
-                    <th className="px-6 py-4 text-center">
-                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full text-sm font-semibold">
-                        DeepRubric
-                      </span>
-                    </th>
-                    <th className="px-6 py-4 text-center">
-                      <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Others</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                  {comparisonFeatures.map((row, i) => (
-                    <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                      <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">{row.feature}</td>
-                      <td className="px-6 py-4 text-center">
-                        {row.deeprubric ? (
-                          <CheckCircle2 className="w-6 h-6 text-emerald-500 mx-auto" />
-                        ) : (
-                          <span className="text-slate-300 dark:text-slate-600">—</span>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        {row.others ? (
-                          <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
-                        ) : (
-                          <span className="text-slate-300 dark:text-slate-600">—</span>
-                        )}
-                      </td>
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[600px]">
+                  <thead>
+                    <tr className="bg-slate-50 dark:bg-slate-800">
+                      <th className="text-left px-6 py-4 text-sm font-semibold text-slate-900 dark:text-white">Feature</th>
+                      <th className="px-4 py-4 text-center">
+                        <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full text-sm font-semibold">
+                          DeepRubric
+                        </span>
+                      </th>
+                      <th className="px-4 py-4 text-center">
+                        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Gradescope</span>
+                      </th>
+                      <th className="px-4 py-4 text-center">
+                        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Crowdmark</span>
+                      </th>
+                      <th className="px-4 py-4 text-center">
+                        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">FeedbackFruits</span>
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                    {comparisonFeatures.map((row, i) => (
+                      <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">{row.feature}</td>
+                        <td className="px-4 py-4 text-center">
+                          {row.deeprubric ? (
+                            <CheckCircle2 className="w-6 h-6 text-emerald-500 mx-auto" />
+                          ) : (
+                            <span className="text-slate-300 dark:text-slate-600">—</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-4 text-center">
+                          {row.gradescope ? (
+                            <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
+                          ) : (
+                            <span className="text-slate-300 dark:text-slate-600">—</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-4 text-center">
+                          {row.crowdmark ? (
+                            <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
+                          ) : (
+                            <span className="text-slate-300 dark:text-slate-600">—</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-4 text-center">
+                          {row.feedbackfruits ? (
+                            <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
+                          ) : (
+                            <span className="text-slate-300 dark:text-slate-600">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -466,10 +488,15 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm"
                 >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, j) => (
-                      <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-1">
+                      {[...Array(testimonial.rating)].map((_, j) => (
+                        <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-xs font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 px-2 py-1 rounded-full">
+                      {testimonial.highlight}
+                    </span>
                   </div>
                   <Quote className="w-8 h-8 text-emerald-200 dark:text-emerald-800 mb-3" />
                   <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed italic">
@@ -481,9 +508,6 @@ export default function HomePage() {
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                       {testimonial.role}
-                    </p>
-                    <p className="text-sm text-emerald-600 dark:text-emerald-400">
-                      {testimonial.institution}
                     </p>
                   </div>
                 </motion.div>
@@ -564,14 +588,14 @@ export default function HomePage() {
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-emerald-600 hover:bg-emerald-50 rounded-xl font-semibold transition-all shadow-lg"
               >
-                Start Your Free Trial
+                Start Free Trial
                 <ArrowRight size={18} />
               </Link>
               <Link 
                 href="/features"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500/30 hover:bg-emerald-500/50 text-white rounded-xl font-semibold transition-all border border-white/20"
               >
-                Explore All Features
+                Explore Features
               </Link>
             </motion.div>
           </div>
@@ -630,7 +654,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                      <Clock size={20} />
+                      <Award size={20} />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 dark:text-slate-400">Demo includes</p>
