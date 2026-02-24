@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
-  ArrowRight, Users, GraduationCap, ClipboardCheck,
-  Clock, FileCheck, Zap, BookOpen,
-  Mail, MessageSquare, CheckCircle2, BarChart3,
-  Target, Play, Quote, Star, ShieldCheck,
+  ArrowRight, GraduationCap, ClipboardCheck,
+  BookOpen, Mail, MessageSquare, CheckCircle2,
+  Play, Quote, Star, ShieldCheck,
   GitBranch, RefreshCw, Eye, Sparkles,
-  Network, Brain, Award
+  Network, Brain, Award, AlertTriangle,
+  FileText, Zap, BarChart3, Search
 } from 'lucide-react';
 import { FeatureCard } from '../components/FeatureCard';
 import { ContactForm } from '../components/ContactForm';
@@ -17,7 +17,7 @@ import { ContactForm } from '../components/ContactForm';
 export default function HomePage() {
   const [index, setIndex] = useState(0);
 
-  const words = ["Grading", "Assessment", "Scoring"];
+  const words = ["Faster", "Fairer", "Smarter"];
   
   useEffect(() => {
     const wordInterval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
@@ -26,35 +26,47 @@ export default function HomePage() {
 
   const stats = [
     { value: "85%", label: "Time Saved", description: "On routine grading tasks" },
-    { value: "100%", label: "Rubric Aligned", description: "Every score tied to criteria" },
+    { value: "94%", label: "First-Pass Accuracy", description: "Against rubric criteria" },
     { value: "3.2x", label: "More Detailed", description: "Feedback per submission" },
   ];
   const statsFootnote = "Based on pilot study with 47 educators, Jan 2026";
 
   const uniqueFeatures = [
     {
-      icon: <ClipboardCheck className="w-8 h-8" />,
-      title: "Rubric-Driven Scoring",
-      description: "Define your rubric once. DeepRubric grades every submission against your exact criteria—consistently, accurately, and at scale.",
-      highlight: "Your rubric, your rules"
+      icon: <Brain className="w-8 h-8" />,
+      title: "AI-Suggested Scores with Rationale",
+      description: "DeepRubric evaluates each submission against your rubric and suggests a score — with a clear written explanation of why, tied to specific criteria. You stay in control; AI does the heavy lifting.",
+      highlight: "Every score is explained"
+    },
+    {
+      icon: <FileText className="w-8 h-8" />,
+      title: "Auto-Generated Student Feedback",
+      description: "Students receive detailed, constructive written feedback on every submission — not just a number. DeepRubric drafts it instantly; you review, edit, and send.",
+      highlight: "Better feedback, less effort"
+    },
+    {
+      icon: <AlertTriangle className="w-8 h-8" />,
+      title: "Academic Integrity Detection",
+      description: "Catch AI-generated content, plagiarism between students, and suspicious similarity to online sources — all in one comprehensive integrity report per submission.",
+      highlight: "AI + plagiarism detection"
     },
     {
       icon: <GitBranch className="w-8 h-8" />,
       title: "Multi-Draft Version Tracking",
-      description: "Track student progress across drafts. See exactly what changed between submissions and provide targeted feedback on improvements.",
+      description: "Track student progress across drafts. See exactly what changed between submissions and provide targeted feedback on specific improvements.",
       highlight: "Full revision history"
-    },
-    {
-      icon: <Eye className="w-8 h-8" />,
-      title: "Explainable Scoring",
-      description: "Every score comes with a clear rationale linked to specific rubric criteria. Students understand exactly why they earned each point.",
-      highlight: "No black-box grading"
     },
     {
       icon: <Network className="w-8 h-8" />,
       title: "Learning Outcome Mapping",
-      description: "Automatically map assessments to institutional learning outcomes. Generate accreditation-ready reports with one click.",
+      description: "Automatically map assessments to institutional learning outcomes. Generate accreditation-ready reports with one click — no manual compilation.",
       highlight: "Accreditation simplified"
+    },
+    {
+      icon: <Eye className="w-8 h-8" />,
+      title: "Transparent, Auditable Grading",
+      description: "Every score links back to a rubric criterion and a written rationale. Students understand exactly why they earned each point. No black-box decisions.",
+      highlight: "No black-box grading"
     }
   ];
 
@@ -62,46 +74,46 @@ export default function HomePage() {
     {
       step: "01",
       title: "Define Your Rubric",
-      description: "Use our visual rubric builder or import existing criteria. Set performance levels, criteria descriptions, and point values.",
+      description: "Use our visual rubric builder or import existing criteria. Set performance levels and weight criteria by importance.",
       icon: <ClipboardCheck className="w-6 h-6" />
     },
     {
       step: "02",
       title: "Students Submit",
-      description: "Students upload to DeepRubric or submit through your LMS. We support essays, code, lab reports, presentations, and more.",
+      description: "Students upload directly to DeepRubric or submit through your LMS. We support essays, code, lab reports, presentations, and more.",
       icon: <BookOpen className="w-6 h-6" />
     },
     {
       step: "03",
-      title: "AI Grades Against Rubric",
-      description: "DeepRubric analyzes each submission and scores it against your rubric criteria, generating detailed feedback for every point.",
-      icon: <BarChart3 className="w-6 h-6" />
+      title: "AI Grades & Flags",
+      description: "DeepRubric scores each submission against your rubric, generates written feedback, and runs academic integrity checks — in seconds.",
+      icon: <Brain className="w-6 h-6" />
     },
     {
       step: "04",
-      title: "Review & Publish",
-      description: "Review suggested scores and feedback. Make any adjustments, then publish to students or sync to your LMS.",
+      title: "You Review & Publish",
+      description: "Review AI-suggested scores and feedback, make any adjustments, then publish to students with one click.",
       icon: <RefreshCw className="w-6 h-6" />
     }
   ];
 
   const testimonials = [
     {
-      quote: "I used to spend 15 hours a week grading essays. With DeepRubric, I define my rubric once and get consistent, rubric-aligned feedback for every student in minutes.",
+      quote: "The AI feedback drafts are genuinely good — detailed, rubric-aligned, and specific. I spend maybe 10 minutes reviewing 30 essays instead of an entire weekend.",
       author: "Dr. Sarah Chen",
       role: "Computer Science Professor",
       rating: 5,
-      highlight: "Time Saver"
+      highlight: "Early Adopter"
     },
     {
-      quote: "The best part is that every score ties back to the rubric. Students finally understand why they got the grade they did—no more office hour debates.",
+      quote: "The academic integrity report caught three AI-generated submissions I would have missed. Having plagiarism and AI detection in one place is a game changer.",
       author: "Prof. Michael Rodriguez",
       role: "English Department Faculty",
       rating: 5,
-      highlight: "Clear Rationale"
+      highlight: "Integrity Detection"
     },
     {
-      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is impressed.",
+      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is genuinely impressed.",
       author: "Dr. Emily Watson",
       role: "Assessment Director",
       rating: 5,
@@ -110,12 +122,14 @@ export default function HomePage() {
   ];
 
   const comparisonFeatures = [
-    { feature: "AI grades against your rubric", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
-    { feature: "Multi-draft version tracking", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: true },
-    { feature: "Explainable scoring rationale", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
-    { feature: "Learning outcome mapping", deeprubric: true, gradescope: true, crowdmark: false, feedbackfruits: true },
-    { feature: "Basic rubric scoring", deeprubric: true, gradescope: true, crowdmark: true, feedbackfruits: true },
-    { feature: "LMS integration", deeprubric: true, gradescope: true, crowdmark: true, feedbackfruits: true },
+    { feature: "AI-suggested scores with rationale",     deeprubric: true,  gradescope: false, crowdmark: false, feedbackfruits: false },
+    { feature: "Auto-generated written feedback",        deeprubric: true,  gradescope: false, crowdmark: false, feedbackfruits: false },
+    { feature: "AI-generated content detection",        deeprubric: true,  gradescope: false, crowdmark: false, feedbackfruits: false },
+    { feature: "Plagiarism & similarity detection",      deeprubric: true,  gradescope: false, crowdmark: false, feedbackfruits: true  },
+    { feature: "Multi-draft version tracking",           deeprubric: true,  gradescope: false, crowdmark: false, feedbackfruits: true  },
+    { feature: "Learning outcome mapping",               deeprubric: true,  gradescope: true,  crowdmark: false, feedbackfruits: true  },
+    { feature: "Basic rubric scoring",                   deeprubric: true,  gradescope: true,  crowdmark: true,  feedbackfruits: true  },
+    { feature: "LMS integration",                        deeprubric: true,  gradescope: true,  crowdmark: true,  feedbackfruits: true  },
   ];
 
   const integrations = [
@@ -125,6 +139,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen w-full flex flex-col bg-white dark:bg-slate-950">
       <main className="flex-grow">
+
         {/* --- HERO SECTION --- */}
         <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 px-6 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30 -z-10" />
@@ -138,7 +153,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-8"
               >
                 <GraduationCap size={16} />
-                <span>AI-Powered Grading, Done Right</span>
+                <span>AI-Powered Grading for Modern Educators</span>
               </motion.div>
 
               <motion.h1 
@@ -162,7 +177,7 @@ export default function HomePage() {
                   </AnimatePresence>
                 </span>
                 <br />
-                <span className="text-slate-600 dark:text-slate-400">That Works For You</span>
+                <span className="text-slate-600 dark:text-slate-400">Grading, Powered by AI</span>
               </motion.h1>
 
               <motion.p 
@@ -171,9 +186,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                DeepRubric grades against your rubric at scale. Every score is 
-                <strong> tied to your criteria</strong>, every feedback explains 
-                <strong> exactly why</strong>, and you review everything before it goes to students.
+                DeepRubric grades submissions against your rubric, writes detailed student feedback, 
+                and detects AI-generated content and plagiarism — all before you open the first paper.
               </motion.p>
 
               <motion.div 
@@ -218,12 +232,12 @@ export default function HomePage() {
                 Not Just Another Grading Tool
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-400">
-                Other platforms apply the same generic model to every educator. DeepRubric grades 
-                against your exact rubric criteria and provides full transparency for every score.
+                Gradescope and Crowdmark digitize grading. DeepRubric automates it — with AI scoring, 
+                written feedback, and academic integrity built in from the start.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {uniqueFeatures.map((feature, i) => (
                 <motion.div 
                   key={i}
@@ -231,18 +245,16 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative flex gap-5 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors group"
+                  className="relative flex flex-col gap-4 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors group"
                 >
                   <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
                     {feature.icon}
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                        {feature.title}
-                      </h3>
-                    </div>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-3 text-sm">
                       {feature.description}
                     </p>
                     <span className="inline-block px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full">
@@ -309,34 +321,15 @@ export default function HomePage() {
                     {comparisonFeatures.map((row, i) => (
                       <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                         <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">{row.feature}</td>
-                        <td className="px-4 py-4 text-center">
-                          {row.deeprubric ? (
-                            <CheckCircle2 className="w-6 h-6 text-emerald-500 mx-auto" />
-                          ) : (
-                            <span className="text-slate-300 dark:text-slate-600">—</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-4 text-center">
-                          {row.gradescope ? (
-                            <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
-                          ) : (
-                            <span className="text-slate-300 dark:text-slate-600">—</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-4 text-center">
-                          {row.crowdmark ? (
-                            <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
-                          ) : (
-                            <span className="text-slate-300 dark:text-slate-600">—</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-4 text-center">
-                          {row.feedbackfruits ? (
-                            <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
-                          ) : (
-                            <span className="text-slate-300 dark:text-slate-600">—</span>
-                          )}
-                        </td>
+                        {(['deeprubric', 'gradescope', 'crowdmark', 'feedbackfruits'] as const).map((platform) => (
+                          <td key={platform} className="px-4 py-4 text-center">
+                            {row[platform] ? (
+                              <CheckCircle2 className={`w-6 h-6 mx-auto ${platform === 'deeprubric' ? 'text-emerald-500' : 'text-slate-400'}`} />
+                            ) : (
+                              <span className="text-slate-300 dark:text-slate-600">—</span>
+                            )}
+                          </td>
+                        ))}
                       </tr>
                     ))}
                   </tbody>
@@ -397,7 +390,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-lg text-slate-600 dark:text-slate-400"
               >
-                Four steps to AI-powered grading that you control
+                From rubric to published grades in four simple steps
               </motion.p>
             </div>
 
@@ -414,7 +407,6 @@ export default function HomePage() {
                   {i < howItWorks.length - 1 && (
                     <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] right-0 h-0.5 bg-gradient-to-r from-emerald-200 to-transparent dark:from-emerald-800" />
                   )}
-                  
                   <div className="text-center">
                     <div className="relative inline-flex mb-6">
                       <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
@@ -535,7 +527,7 @@ export default function HomePage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Your rubrics and student work stay private—never used to train models",
+                    "Student submissions are never used to train AI models",
                     "End-to-end encryption for all data in transit and at rest",
                     "SOC 2 Type II compliant infrastructure",
                     "GDPR and FERPA aligned data handling",
@@ -568,7 +560,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-white mb-6"
             >
-              Ready for AI-Powered Grading You Can Trust?
+              Grade Smarter. Catch Cheating. Give Better Feedback.
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -577,7 +569,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-emerald-100 mb-10 max-w-2xl mx-auto"
             >
-              Define your rubric, let AI handle the grading, and review everything before it goes to students. Save hours every week.
+              Set up your rubric, let AI do the grading, and publish results in a fraction of the time.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -624,7 +616,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6"
                 >
-                  See DeepRubric Grade Against Your Rubric
+                  See DeepRubric in Action
                 </motion.h2>
                 
                 <motion.p 
@@ -634,8 +626,9 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
                 >
-                  Schedule a personalized demo to see how DeepRubric grades against your rubric, 
-                  generates detailed feedback, and saves you hours every week.
+                  Schedule a personalized demo. Bring a real assignment — we'll run it through 
+                  DeepRubric live and show you AI scoring, feedback generation, and integrity 
+                  detection in action.
                 </motion.p>
                 
                 <motion.div 
@@ -660,7 +653,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 dark:text-slate-400">Demo includes</p>
-                      <p className="font-semibold text-slate-900 dark:text-white">Rubric setup and demo</p>
+                      <p className="font-semibold text-slate-900 dark:text-white">Live AI grading on your own assignment</p>
                     </div>
                   </div>
                 </motion.div>
