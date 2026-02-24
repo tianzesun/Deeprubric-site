@@ -26,17 +26,17 @@ export default function HomePage() {
 
   const stats = [
     { value: "85%", label: "Time Saved", description: "On routine grading tasks" },
-    { value: "94%", label: "First-Pass Accuracy", description: "Without educator revision" },
+    { value: "100%", label: "Rubric Aligned", description: "Every score tied to criteria" },
     { value: "3.2x", label: "More Detailed", description: "Feedback per submission" },
   ];
   const statsFootnote = "Based on pilot study with 47 educators, Jan 2026";
 
   const uniqueFeatures = [
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Learns Your Grading Style",
-      description: "DeepRubric adapts to how YOU grade. It learns from your revisions and feedback patterns, becoming more accurate with each assignment you review.",
-      highlight: "Not a one-size-fits-all model"
+      icon: <ClipboardCheck className="w-8 h-8" />,
+      title: "Rubric-Driven Scoring",
+      description: "Define your rubric once. DeepRubric grades every submission against your exact criteria—consistently, accurately, and at scale.",
+      highlight: "Your rubric, your rules"
     },
     {
       icon: <GitBranch className="w-8 h-8" />,
@@ -61,44 +61,44 @@ export default function HomePage() {
   const howItWorks = [
     {
       step: "01",
-      title: "Train on Your Style",
-      description: "Upload past graded assignments. DeepRubric learns your grading patterns, terminology, and feedback style in minutes.",
-      icon: <Brain className="w-6 h-6" />
-    },
-    {
-      step: "02",
       title: "Define Your Rubric",
-      description: "Use our visual rubric builder or import existing criteria. Set performance levels and weight criteria by importance.",
+      description: "Use our visual rubric builder or import existing criteria. Set performance levels, criteria descriptions, and point values.",
       icon: <ClipboardCheck className="w-6 h-6" />
     },
     {
-      step: "03",
+      step: "02",
       title: "Students Submit",
       description: "Students upload to DeepRubric or submit through your LMS. We support essays, code, lab reports, presentations, and more.",
       icon: <BookOpen className="w-6 h-6" />
     },
     {
+      step: "03",
+      title: "AI Grades Against Rubric",
+      description: "DeepRubric analyzes each submission and scores it against your rubric criteria, generating detailed feedback for every point.",
+      icon: <BarChart3 className="w-6 h-6" />
+    },
+    {
       step: "04",
-      title: "Review & Refine",
-      description: "You review suggested scores and feedback. Make adjustments, and DeepRubric learns from your changes for next time.",
+      title: "Review & Publish",
+      description: "Review suggested scores and feedback. Make any adjustments, then publish to students or sync to your LMS.",
       icon: <RefreshCw className="w-6 h-6" />
     }
   ];
 
   const testimonials = [
     {
-      quote: "After training DeepRubric on my past 200 graded essays, it started giving feedback that sounded exactly like mine. My students can't tell the difference.",
+      quote: "I used to spend 15 hours a week grading essays. With DeepRubric, I define my rubric once and get consistent, rubric-aligned feedback for every student in minutes.",
       author: "Dr. Sarah Chen",
       role: "Computer Science Professor",
       rating: 5,
-      highlight: "Early Adopter"
+      highlight: "Time Saver"
     },
     {
-      quote: "The multi-draft tracking changed how I teach writing. I can see exactly how students improved between drafts and focus my feedback where it matters.",
+      quote: "The best part is that every score ties back to the rubric. Students finally understand why they got the grade they did—no more office hour debates.",
       author: "Prof. Michael Rodriguez",
       role: "English Department Faculty",
       rating: 5,
-      highlight: "Writing Focus"
+      highlight: "Clear Rationale"
     },
     {
       quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is impressed.",
@@ -110,7 +110,7 @@ export default function HomePage() {
   ];
 
   const comparisonFeatures = [
-    { feature: "Learns your grading style", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
+    { feature: "AI grades against your rubric", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
     { feature: "Multi-draft version tracking", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: true },
     { feature: "Explainable scoring rationale", deeprubric: true, gradescope: false, crowdmark: false, feedbackfruits: false },
     { feature: "Learning outcome mapping", deeprubric: true, gradescope: true, crowdmark: false, feedbackfruits: true },
@@ -138,7 +138,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-8"
               >
                 <GraduationCap size={16} />
-                <span>The Grading Platform That Learns From You</span>
+                <span>AI-Powered Grading, Done Right</span>
               </motion.div>
 
               <motion.h1 
@@ -162,7 +162,7 @@ export default function HomePage() {
                   </AnimatePresence>
                 </span>
                 <br />
-                <span className="text-slate-600 dark:text-slate-400">That Thinks Like You</span>
+                <span className="text-slate-600 dark:text-slate-400">That Works For You</span>
               </motion.h1>
 
               <motion.p 
@@ -171,9 +171,9 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                DeepRubric learns your grading style from past assignments. It gives feedback 
-                <strong> the way you would</strong>, gets smarter with every revision, and explains 
-                <strong> exactly why</strong> each score was given.
+                DeepRubric grades against your rubric at scale. Every score is 
+                <strong> tied to your criteria</strong>, every feedback explains 
+                <strong> exactly why</strong>, and you review everything before it goes to students.
               </motion.p>
 
               <motion.div 
@@ -218,8 +218,8 @@ export default function HomePage() {
                 Not Just Another Grading Tool
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-400">
-                Other platforms apply the same generic model to every educator. DeepRubric personalizes 
-                to your unique grading style and provides transparency at every step.
+                Other platforms apply the same generic model to every educator. DeepRubric grades 
+                against your exact rubric criteria and provides full transparency for every score.
               </p>
             </motion.div>
 
@@ -388,7 +388,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
               >
-                How DeepRubric Learns You
+                How DeepRubric Works
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -397,7 +397,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-lg text-slate-600 dark:text-slate-400"
               >
-                Four steps to a personalized grading assistant that thinks like you do
+                Four steps to AI-powered grading that you control
               </motion.p>
             </div>
 
@@ -535,7 +535,7 @@ export default function HomePage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Your grading style model is yours alone—not shared with other users",
+                    "Your rubrics and student work stay private—never used to train models",
                     "End-to-end encryption for all data in transit and at rest",
                     "SOC 2 Type II compliant infrastructure",
                     "GDPR and FERPA aligned data handling",
@@ -568,7 +568,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-white mb-6"
             >
-              Ready for a Grading Assistant That Knows You?
+              Ready for AI-Powered Grading You Can Trust?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -577,7 +577,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-emerald-100 mb-10 max-w-2xl mx-auto"
             >
-              Train your personalized grading model in minutes. See feedback that sounds like you wrote it yourself.
+              Define your rubric, let AI handle the grading, and review everything before it goes to students. Save hours every week.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -624,7 +624,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6"
                 >
-                  See DeepRubric Learn Your Style
+                  See DeepRubric Grade Against Your Rubric
                 </motion.h2>
                 
                 <motion.p 
@@ -634,8 +634,8 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
                 >
-                  Schedule a personalized demo where we'll train a model on your past assignments 
-                  and show you how DeepRubric adapts to your unique grading style.
+                  Schedule a personalized demo to see how DeepRubric grades against your rubric, 
+                  generates detailed feedback, and saves you hours every week.
                 </motion.p>
                 
                 <motion.div 
@@ -660,7 +660,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 dark:text-slate-400">Demo includes</p>
-                      <p className="font-semibold text-slate-900 dark:text-white">Personalized model training</p>
+                      <p className="font-semibold text-slate-900 dark:text-white">Rubric setup and demo</p>
                     </div>
                   </div>
                 </motion.div>
