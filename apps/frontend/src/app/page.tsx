@@ -7,7 +7,9 @@ import {
   ArrowRight, Users, GraduationCap, ClipboardCheck,
   Clock, FileCheck, Zap, BookOpen, TrendingUp,
   Mail, MessageSquare, CheckCircle2, BarChart3,
-  Target, Play, Quote, Star, ShieldCheck
+  Target, Play, Quote, Star, ShieldCheck,
+  Layers, GitBranch, RefreshCw, Eye, Sparkles,
+  FileSearch, Network, Settings2, Brain
 } from 'lucide-react';
 import { FeatureCard } from '../components/FeatureCard';
 import { ContactForm } from '../components/ContactForm';
@@ -24,129 +26,100 @@ export default function HomePage() {
 
   const stats = [
     { value: "85%", label: "Time Saved", description: "On routine grading tasks" },
-    { value: "98%", label: "Consistency", description: "Across all evaluations" },
+    { value: "94%", label: "First-Pass Accuracy", description: "Without educator revision" },
+    { value: "3.2x", label: "Feedback Detail", description: "More specific comments" },
     { value: "500+", label: "Institutions", description: "Worldwide trust DeepRubric" },
-    { value: "2M+", label: "Assignments", description: "Assessed monthly" },
   ];
 
-  const painPoints = [
+  const uniqueFeatures = [
     {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Grading Takes Forever",
-      description: "Educators spend 10+ hours weekly on grading—time that could be spent teaching, mentoring, or developing curriculum."
+      icon: <Brain className="w-8 h-8" />,
+      title: "Learns Your Grading Style",
+      description: "DeepRubric adapts to how YOU grade. It learns from your revisions and feedback patterns, becoming more accurate with each assignment you review.",
+      highlight: "Not a one-size-fits-all model"
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Inconsistent Evaluation",
-      description: "Grading varies based on fatigue, time constraints, and other factors. Students deserve fair, consistent assessment."
+      icon: <GitBranch className="w-8 h-8" />,
+      title: "Multi-Draft Version Tracking",
+      description: "Track student progress across drafts. See exactly what changed between submissions and provide targeted feedback on improvements.",
+      highlight: "Full revision history"
     },
     {
-      icon: <BookOpen className="w-8 h-8" />,
-      title: "Limited Feedback Depth",
-      description: "With tight deadlines, detailed feedback becomes impossible. Students get a grade but miss the learning opportunity."
+      icon: <Eye className="w-8 h-8" />,
+      title: "Explainable Scoring",
+      description: "Every score comes with a clear rationale linked to specific rubric criteria. Students understand exactly why they earned each point.",
+      highlight: "No black-box grading"
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: "Scaling Challenges",
-      description: "As class sizes grow, maintaining quality assessment becomes unsustainable without sacrificing educator wellbeing."
-    }
-  ];
-
-  const solutions = [
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Streamlined Workflow",
-      description: "Cut grading time by 85%. Focus on high-value feedback and meaningful student interactions."
-    },
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: "Consistent & Fair",
-      description: "Every submission evaluated against the same rubric criteria—consistent, objective assessment every time."
-    },
-    {
-      icon: <MessageSquare className="w-6 h-6" />,
-      title: "Rich, Actionable Feedback",
-      description: "Generate detailed, personalized feedback for every student. Help them understand how to improve."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Scale Without Compromise",
-      description: "Handle 30 or 300 students with the same care and attention. Grow your program without growing your workload."
+      icon: <Network className="w-8 h-8" />,
+      title: "Learning Outcome Mapping",
+      description: "Automatically map assessments to institutional learning outcomes. Generate accreditation-ready reports with one click.",
+      highlight: "Accreditation simplified"
     }
   ];
 
   const howItWorks = [
     {
       step: "01",
-      title: "Create Your Rubric",
-      description: "Define your assessment criteria using our intuitive rubric builder or import existing standards.",
-      icon: <ClipboardCheck className="w-6 h-6" />
+      title: "Train on Your Style",
+      description: "Upload past graded assignments. DeepRubric learns your grading patterns, terminology, and feedback style in minutes.",
+      icon: <Brain className="w-6 h-6" />
     },
     {
       step: "02",
-      title: "Collect Submissions",
-      description: "Students submit work through the platform or integrate with your existing LMS.",
-      icon: <BookOpen className="w-6 h-6" />
+      title: "Define Your Rubric",
+      description: "Use our visual rubric builder or import existing criteria. Set performance levels and weight criteria by importance.",
+      icon: <ClipboardCheck className="w-6 h-6" />
     },
     {
       step: "03",
-      title: "Smart Analysis",
-      description: "Our system analyzes each submission against your rubric, providing scores and feedback suggestions.",
-      icon: <BarChart3 className="w-6 h-6" />
+      title: "Students Submit",
+      description: "Students upload to DeepRubric or submit through your LMS. We support essays, code, lab reports, presentations, and more.",
+      icon: <BookOpen className="w-6 h-6" />
     },
     {
       step: "04",
-      title: "Educator Review",
-      description: "Review, adjust, and approve. You maintain full control—you make the final decisions.",
-      icon: <GraduationCap className="w-6 h-6" />
+      title: "Review & Refine",
+      description: "You review suggested scores and feedback. Make adjustments, and DeepRubric learns from your changes for next time.",
+      icon: <RefreshCw className="w-6 h-6" />
     }
   ];
 
   const testimonials = [
     {
-      quote: "DeepRubric has transformed how I teach. I spend 60% less time grading and 100% more time engaging with my students.",
+      quote: "After training DeepRubric on my past 200 graded essays, it started giving feedback that sounded exactly like mine. My students can't tell the difference.",
       author: "Dr. Sarah Chen",
       role: "Professor of Computer Science",
       institution: "Stanford University",
       rating: 5
     },
     {
-      quote: "The consistency of feedback has dramatically improved student satisfaction. They finally understand why they received their grade.",
+      quote: "The multi-draft tracking changed how I teach writing. I can see exactly how students improved between drafts and focus my feedback where it matters.",
       author: "Prof. Michael Rodriguez",
       role: "Department Chair, English",
       institution: "UCLA",
       rating: 5
     },
     {
-      quote: "We scaled our online program from 500 to 2,000 students without hiring additional graders. The ROI is undeniable.",
+      quote: "Accreditation used to take our department weeks. Now I generate learning outcome reports in minutes. The administration is impressed.",
       author: "Dr. Emily Watson",
-      role: "Director of Online Learning",
+      role: "Director of Assessment",
       institution: "University of Michigan",
       rating: 5
     }
   ];
 
-  const features = [
-    {
-      icon: <ClipboardCheck className="w-6 h-6" />,
-      title: "Flexible Rubric Builder",
-      description: "Create and customize rubrics that align with your curriculum, learning objectives, and institutional standards."
-    },
-    {
-      icon: <GraduationCap className="w-6 h-6" />,
-      title: "Educator Control",
-      description: "You maintain full control with built-in review workflows. Technology assists—you decide."
-    },
-    {
-      icon: <FileCheck className="w-6 h-6" />,
-      title: "Multi-Format Support",
-      description: "Accept essays, code, presentations, and more. DeepRubric adapts to your assessment needs."
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: "Insightful Analytics",
-      description: "Gain insights into student performance patterns, identify learning gaps, and track progress over time."
-    },
+  const comparisonFeatures = [
+    { feature: "Learns your grading style", deeprubric: true, others: false },
+    { feature: "Multi-draft version tracking", deeprubric: true, others: false },
+    { feature: "Explainable scoring rationale", deeprubric: true, others: false },
+    { feature: "Learning outcome mapping", deeprubric: true, others: false },
+    { feature: "Basic rubric scoring", deeprubric: true, others: true },
+    { feature: "LMS integration", deeprubric: true, others: true },
+  ];
+
+  const integrations = [
+    "Canvas", "Blackboard", "Moodle", "Brightspace", "Google Classroom", "Sakai"
   ];
 
   return (
@@ -165,7 +138,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-8"
               >
                 <GraduationCap size={16} />
-                <span>Empowering Educators Since 2024</span>
+                <span>The Grading Platform That Learns From You</span>
               </motion.div>
 
               <motion.h1 
@@ -174,7 +147,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
               >
-                Smarter
+                Grading That
+                <br />
                 <span className="relative inline-block h-[1.2em] mx-2">
                   <AnimatePresence mode="wait">
                     <motion.span 
@@ -189,8 +163,7 @@ export default function HomePage() {
                     </motion.span>
                   </AnimatePresence>
                 </span>
-                <br />
-                <span className="text-slate-600 dark:text-slate-400">for Modern Education</span>
+                <span className="text-slate-600 dark:text-slate-400">Like You</span>
               </motion.h1>
 
               <motion.p 
@@ -199,9 +172,9 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                DeepRubric gives you <strong>85% of your grading time back</strong> while delivering 
-                <strong> more consistent, detailed feedback</strong> to every student. 
-                Spend less time grading, more time teaching.
+                DeepRubric learns your grading style from past assignments. It gives feedback 
+                <strong> the way you would</strong>, gets smarter with every revision, and explains 
+                <strong> exactly why</strong> each score was given.
               </motion.p>
 
               <motion.div 
@@ -214,7 +187,7 @@ export default function HomePage() {
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30"
                 >
-                  Request a Demo
+                  Train Your Own Model — Free Trial
                   <ArrowRight size={18} />
                 </Link>
                 <Link 
@@ -229,7 +202,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- PAIN POINTS SECTION --- */}
+        {/* --- WHAT MAKES US DIFFERENT --- */}
         <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-950">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div 
@@ -238,34 +211,44 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center max-w-3xl mx-auto mb-16"
             >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 dark:bg-purple-950/50 border border-purple-100 dark:border-purple-900 text-purple-600 dark:text-purple-400 text-sm font-medium mb-6">
+                <Sparkles size={16} />
+                <span>What Makes DeepRubric Different</span>
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                The Grading Challenge
+                Not Just Another Grading Tool
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-400">
-                These are the challenges educators face every single day. You're not alone.
+                Other platforms apply the same generic model to every educator. DeepRubric personalizes 
+                to your unique grading style and provides transparency at every step.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {painPoints.map((point, i) => (
+            <div className="grid md:grid-cols-2 gap-8">
+              {uniqueFeatures.map((feature, i) => (
                 <motion.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex gap-5 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800/50 transition-colors group"
+                  className="relative flex gap-5 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors group"
                 >
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/30 group-hover:text-emerald-600 transition-colors">
-                    {point.icon}
+                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                    {feature.icon}
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                      {point.title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {point.description}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                        {feature.title}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+                      {feature.description}
                     </p>
+                    <span className="inline-block px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full">
+                      {feature.highlight}
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -273,51 +256,72 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- SOLUTION SECTION --- */}
+        {/* --- COMPARISON TABLE --- */}
         <section className="py-20 md:py-28 px-6">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+              >
+                Feature Comparison
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-lg text-slate-600 dark:text-slate-400"
+              >
+                See how DeepRubric stacks up against other grading platforms
+              </motion.p>
+            </div>
+
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center max-w-3xl mx-auto mb-16"
+              className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-600 dark:text-emerald-400 text-sm font-medium mb-6">
-                <CheckCircle2 size={16} />
-                <span>The DeepRubric Solution</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                Assessment Made Simple
-              </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
-                We built DeepRubric to solve these exact problems—so you can focus on education, not administration.
-              </p>
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-slate-50 dark:bg-slate-800">
+                    <th className="text-left px-6 py-4 text-sm font-semibold text-slate-900 dark:text-white">Feature</th>
+                    <th className="px-6 py-4 text-center">
+                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full text-sm font-semibold">
+                        DeepRubric
+                      </span>
+                    </th>
+                    <th className="px-6 py-4 text-center">
+                      <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Others</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                  {comparisonFeatures.map((row, i) => (
+                    <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                      <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">{row.feature}</td>
+                      <td className="px-6 py-4 text-center">
+                        {row.deeprubric ? (
+                          <CheckCircle2 className="w-6 h-6 text-emerald-500 mx-auto" />
+                        ) : (
+                          <span className="text-slate-300 dark:text-slate-600">—</span>
+                        )}
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        {row.others ? (
+                          <CheckCircle2 className="w-6 h-6 text-slate-400 mx-auto" />
+                        ) : (
+                          <span className="text-slate-300 dark:text-slate-600">—</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {solutions.map((solution, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex gap-5 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-950/20 dark:to-slate-900 border border-emerald-100 dark:border-emerald-900/30 hover:border-emerald-200 dark:hover:border-emerald-800/50 transition-colors"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                    {solution.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                      {solution.title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {solution.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -360,7 +364,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
               >
-                How It Works
+                How DeepRubric Learns You
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -369,7 +373,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-lg text-slate-600 dark:text-slate-400"
               >
-                Four simple steps to transform your assessment workflow
+                Four steps to a personalized grading assistant that thinks like you do
               </motion.p>
             </div>
 
@@ -409,6 +413,25 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* --- LMS INTEGRATIONS --- */}
+        <section className="py-16 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 border-y border-slate-200 dark:border-slate-700">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-6">
+              Works With Your Existing LMS
+            </h3>
+            <div className="flex flex-wrap justify-center gap-6">
+              {integrations.map((lms, i) => (
+                <div 
+                  key={i}
+                  className="px-6 py-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium shadow-sm"
+                >
+                  {lms}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* --- TESTIMONIALS SECTION --- */}
         <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-950">
           <div className="max-w-7xl mx-auto px-6">
@@ -420,7 +443,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
               >
-                Trusted by Educators Worldwide
+                Educators Love the Difference
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -429,7 +452,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="text-lg text-slate-600 dark:text-slate-400"
               >
-                See what educators are saying about DeepRubric
+                Real stories from professors who switched to DeepRubric
               </motion.p>
             </div>
 
@@ -469,57 +492,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- FEATURES SECTION --- */}
-        <section className="py-20 md:py-28 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
-              >
-                Built for Modern Education
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-lg text-slate-600 dark:text-slate-400"
-              >
-                A comprehensive platform designed by educators, for educators—streamlining assessment while preserving academic integrity.
-              </motion.p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {features.map((feature, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex gap-5 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800/50 transition-colors"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* --- SECURITY & TRUST SECTION --- */}
         <section className="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-6">
@@ -537,6 +509,7 @@ export default function HomePage() {
                 </p>
                 <ul className="space-y-3">
                   {[
+                    "Your grading style model is yours alone—not shared with other users",
                     "End-to-end encryption for all data in transit and at rest",
                     "SOC 2 Type II compliant infrastructure",
                     "GDPR and FERPA aligned data handling",
@@ -569,7 +542,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-white mb-6"
             >
-              Ready to Transform Your Assessment?
+              Ready for a Grading Assistant That Knows You?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -578,8 +551,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-emerald-100 mb-10 max-w-2xl mx-auto"
             >
-              Join 500+ institutions that have reclaimed their time with DeepRubric. 
-              Get started with a personalized demo today.
+              Train your personalized grading model in minutes. See feedback that sounds like you wrote it yourself.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -592,7 +564,7 @@ export default function HomePage() {
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-emerald-600 hover:bg-emerald-50 rounded-xl font-semibold transition-all shadow-lg"
               >
-                Request Your Free Demo
+                Start Your Free Trial
                 <ArrowRight size={18} />
               </Link>
               <Link 
@@ -626,7 +598,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6"
                 >
-                  Transform Assessment at Your Institution
+                  See DeepRubric Learn Your Style
                 </motion.h2>
                 
                 <motion.p 
@@ -636,8 +608,8 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
                 >
-                  Schedule a personalized demo to see how DeepRubric can streamline your assessment 
-                  workflow while maintaining academic integrity and educator control.
+                  Schedule a personalized demo where we'll train a model on your past assignments 
+                  and show you how DeepRubric adapts to your unique grading style.
                 </motion.p>
                 
                 <motion.div 
@@ -661,8 +633,8 @@ export default function HomePage() {
                       <Clock size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Response time</p>
-                      <p className="font-semibold text-slate-900 dark:text-white">Within 24 hours</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">Demo includes</p>
+                      <p className="font-semibold text-slate-900 dark:text-white">Personalized model training</p>
                     </div>
                   </div>
                 </motion.div>
