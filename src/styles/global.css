@@ -1,0 +1,40 @@
+/* Global polish on the main layout. */
+
+/* --- Global Transitions and Polish --- */
+body {
+    /* Ensures all elements inherit a smooth transition for hover/focus */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Target all major container elements to ensure smooth transitions */
+.card, .widget-container, .dashboard-section {
+    transition: all transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease-out;
+}
+
+/* Hover Effect: Lift, Shadow, and Color Shift */
+.card:hover, .widget-container:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Active State Feedback */
+.btn-primary:active {
+    transform: scale(0.98);
+    box-shadow: none !important;
+}
+
+/* Loading State Visual Polish */
+.loading-skeleton {
+    animation: pulse-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* @keyframes for animation */
+@keyframes pulse-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Global utility class to apply the transition smoothly */
+.transition-smooth {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
