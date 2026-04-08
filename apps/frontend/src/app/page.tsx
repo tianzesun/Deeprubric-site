@@ -9,7 +9,7 @@ import {
   Play, ShieldCheck,
   GitBranch, RefreshCw, Eye, Sparkles,
   Network, Brain, Award, AlertTriangle,
-  FileText, Users, Clock
+  FileText, Users, Clock, BarChart3
 } from 'lucide-react';
 import { FeatureCard } from '../components/FeatureCard';
 import { ContactForm } from '../components/ContactForm';
