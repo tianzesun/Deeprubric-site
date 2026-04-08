@@ -157,9 +157,9 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight"
               >
-                <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent dark:from-emerald-400 dark:via-emerald-300 dark:to-teal-400">AI Grades Your Papers.</span>
+                <span className="text-slate-700 dark:text-slate-300">Stop Grading on Sunday Nights.</span>
                 <br />
-                <span className="text-slate-700 dark:text-slate-300">You Review the Results.</span>
+                <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent dark:from-emerald-400 dark:via-emerald-300 dark:to-teal-400">DeepRubric Does It For You.</span>
               </motion.h1>
 
               <motion.p 
@@ -168,8 +168,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                DeepRubric grades submissions against your rubric, writes detailed student feedback, 
-                and detects AI-generated content and plagiarism — all before you open the first paper.
+                You create the rubric. AI grades every submission, writes detailed feedback, and catches cheating.
+                You review, adjust if needed, and hit publish. Get your evenings and weekends back.
               </motion.p>
 
               <motion.div 
