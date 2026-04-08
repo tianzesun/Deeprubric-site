@@ -31,7 +31,7 @@ export function useCardTiltEffect() {
       const rect = element.getBoundingClientRect();
       
       const mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
+      const mouseY = e.clientY - rect.top;
       
       const percentX = mouseX / rect.width;
       const percentY = mouseY / rect.height;
