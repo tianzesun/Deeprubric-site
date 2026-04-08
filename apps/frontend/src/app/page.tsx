@@ -445,6 +445,90 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* --- PROFESSOR TESTIMONIALS --- */}
+        <section className="py-20 bg-white dark:bg-slate-950">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-3xl mx-auto mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                What Professors Are Saying
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400">
+                Real feedback from educators using DeepRubric
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+              >
+                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
+                  "I was grading 150 essays every 2 weeks on Sunday nights. Now I spend 45 minutes reviewing. I got my life back."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+                    DR
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white">Dr. Rebecca Miller</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">English, University of Toronto</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+              >
+                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
+                  "Turnitin couldn't catch AI code. DeepRubric found 12 submissions in the first assignment I ran through it."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+                    JP
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white">Prof. James Park</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Computer Science, Waterloo</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+              >
+                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
+                  "We spent 3 weeks compiling accreditation reports. DeepRubric generated it in 47 minutes."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+                    SM
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 dark:text-white">Dr. Sarah MacDonald</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Nursing Program Director</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* --- USE CASES SECTION --- */}
         <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-950">
           <div className="max-w-7xl mx-auto px-6">
