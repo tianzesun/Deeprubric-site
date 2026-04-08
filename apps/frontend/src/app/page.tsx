@@ -43,6 +43,12 @@ export default function HomePage() {
       highlight: "AI + plagiarism detection"
     },
     {
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "Course Insights & Analytics",
+      description: "See exactly where your class is struggling. Identify common misconceptions before the final exam. Students get personal progress dashboards showing exactly where they need to improve.",
+      highlight: "For professors AND students"
+    },
+    {
       icon: <GitBranch className="w-8 h-8" />,
       title: "Multi-Draft Version Tracking",
       description: "Track student progress across drafts. See exactly what changed between submissions and provide targeted feedback on specific improvements.",
