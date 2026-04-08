@@ -131,9 +131,15 @@ export default function HomePage() {
 
         {/* --- HERO SECTION --- */}
         <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 px-6 overflow-hidden">
+          {/* Premium animated background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30 -z-10" />
           
-          <div className="max-w-7xl mx-auto">
+          {/* Floating gradient orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300/20 rounded-full blur-3xl animate-morph" />
+          <div className="absolute top-40 right-20 w-96 h-96 bg-teal-300/15 rounded-full blur-3xl animate-morph" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-purple-300/10 rounded-full blur-3xl animate-morph" style={{ animationDelay: '4s' }} />
+          
+          <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center max-w-4xl mx-auto">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -149,9 +155,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight"
               >
-                <span className="text-emerald-600 dark:text-emerald-400">AI Grades Your Papers.</span>
+                <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent dark:from-emerald-400 dark:via-emerald-300 dark:to-teal-400">AI Grades Your Papers.</span>
                 <br />
                 <span className="text-slate-700 dark:text-slate-300">You Review the Results.</span>
               </motion.h1>
@@ -174,14 +180,14 @@ export default function HomePage() {
               >
                 <Link 
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-1 active:translate-y-0"
                 >
                   Start Free Trial
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link 
                   href="#how-it-works"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white rounded-xl font-semibold transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl hover:bg-white dark:hover:bg-slate-800 text-slate-900 dark:text-white rounded-xl font-semibold transition-all border border-slate-200/50 dark:border-slate-700/50 hover:-translate-y-1 active:translate-y-0 shadow-md"
                 >
                   <Play size={18} />
                   See How It Works
@@ -221,7 +227,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative flex flex-col gap-4 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors group"
+                  className="relative flex flex-col gap-4 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 group hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10"
                 >
                   <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
                     {feature.icon}

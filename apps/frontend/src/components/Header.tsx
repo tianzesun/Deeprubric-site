@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { 
   Sparkles, 
   Menu, 
@@ -12,6 +12,13 @@ import {
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
+  
+  // Markham standard dynamic header scroll thresholds
+  const headerOpacity = useTransform(scrollY, [0, 80], [0.7, 0.95]);
+  const headerBlur = useTransform(scrollY, [0, 80], [8, 20]);
+  const headerShadow = useTransform(scrollY, [0, 80], [0, 1]);
+  const headerBorder = useTransform(scrollY, [0, 80], [0, 1]);
 
   const navigation = [
     { name: 'Features', href: '/features' },
@@ -21,7 +28,18 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+    <motion.header 
+      style={{
+        backgroundColor: `rgba(var(--background-rgb), ${headerOpacity})`,
+        backdropFilter: `blur(${headerBlur}px)`,
+      }}
+      className="fixed top-0 left-0 right-0 z-[100] border-b transition-all duration-300"
+      animate={{
+        boxShadow: headerShadow.get() > 0.5 ? '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)' : '0 0 0 0 rgb(0 0 0 / 0)',
+        borderColor: headerBorder.get() > 0.5 ? 'rgba(148, 163, 184, 0.2)' : 'transparent'
+      }}
+      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -117,6 +135,6 @@ export const Header: React.FC = () => {
           </div>
         </motion.div>
       </div>
-    </header>
+    </motion.header>
   );
 };

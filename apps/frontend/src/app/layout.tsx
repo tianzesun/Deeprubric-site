@@ -92,6 +92,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} min-h-screen flex flex-col bg-slate-50 dark:bg-[#020617] transition-colors duration-1000`}>
+        {/* Markham standard grain overlay */}
+        <div className="grain-overlay" />
+        
         {/* Global Navigation */}
         <Navigation />
 
