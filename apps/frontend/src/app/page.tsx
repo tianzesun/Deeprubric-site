@@ -182,13 +182,13 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
               >
                 <Link 
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-1 active:translate-y-0"
                 >
-                  Start Free Trial
+                  Grade Your Next Assignment Free
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link 
@@ -199,6 +199,15 @@ export default function HomePage() {
                   See How It Works
                 </Link>
               </motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+                className="text-sm text-slate-500 dark:text-slate-400 text-center"
+              >
+                No credit card required. Cancel any time. Grade up to 100 submissions completely free.
+              </motion.p>
             </div>
           </div>
         </section>
