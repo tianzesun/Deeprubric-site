@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // Or your preferred font
 import "../styles/globals.css";
-import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
+import structuredData from "../../public/structured-data.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
-  manifest: '/site.webmanifest',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
@@ -92,6 +92,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} min-h-screen flex flex-col bg-slate-50 dark:bg-[#020617] transition-colors duration-1000`}>
+        {/* Organization structured data; "<" is escaped so the JSON can't close the script tag */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
+        />
+
         {/* Markham standard grain overlay */}
         <div className="grain-overlay" />
         

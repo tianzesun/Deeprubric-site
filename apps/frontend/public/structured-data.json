@@ -21,7 +21,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "Customer Support",
-    "email": "protocol@deeprubric.ai",
+    "email": "contact@deeprubric.ai",
     "availableLanguage": ["English"]
   },
   "address": {

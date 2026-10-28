@@ -19,7 +19,7 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            No per student fees. No hidden costs. Pay only for what you use.
+            One flat price per instructor. No per student fees. No hidden costs.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export default function PricingPage() {
             </Link>
             
             <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3">
-              No credit card required. 30 day money back guarantee.
+              Grade your first 100 submissions free. No credit card required.
             </p>
           </motion.div>
 
@@ -122,8 +122,8 @@ export default function PricingPage() {
             30 Day Money Back Guarantee
           </h3>
           <p className="text-slate-600 dark:text-slate-400 mb-6">
-            If you are not completely satisfied with DeepRubric for any reason within your first 30 days, 
-            we will refund your payment in full. No questions asked.
+            Start free with up to 100 submissions, no credit card required. If you upgrade to a paid plan 
+            and are not completely satisfied within your first 30 days, we will refund your payment in full.
           </p>
           <Link 
             href="/#contact"

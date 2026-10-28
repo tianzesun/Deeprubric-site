@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "$12 per month per instructor. Unlimited courses, unlimited students, unlimited submissions. Bulk pricing available for departments and institutions. No per student fees ever."
+    answer: "$12 per month per instructor. Unlimited courses, unlimited students, unlimited submissions. Your first 100 submissions are free, and paid plans come with a 30 day money back guarantee. Bulk pricing available for departments and institutions. No per student fees ever."
   },
   {
-    question: "Can students tell AI wrote the feedback?",
-    answer: "No. All feedback is written in natural, human sounding language. Every comment is specific to the actual submission, not generic templates. Students consistently rate the feedback quality higher than human written feedback."
+    question: "Should I tell students that AI helps with grading?",
+    answer: "Yes, and we make it easy. DeepRubric drafts feedback specific to each submission, not generic templates, but you review and approve every comment and score before students see it. Many institutions require disclosure of AI use in assessment, so we recommend telling students how DeepRubric is used in your course and following your institution's policy."
   },
   {
     question: "What types of assignments work?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "Is this FERPA compliant?",
-    answer: "Yes. DeepRubric is fully FERPA compliant, SOC 2 Type II audited, and GDPR ready. We sign BAA agreements for institutions that require them."
+    answer: "Yes. DeepRubric is fully FERPA compliant, SOC 2 Type II audited, and GDPR ready. We sign data processing agreements for institutions that require them."
   },
   {
     question: "Can I try this without talking to sales?",
@@ -69,8 +69,11 @@ export default function FAQPage() {
               className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden"
             >
               <button
+                id={`faq-question-${i}`}
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-6 text-left"
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
+                className="w-full flex items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
               >
                 <span className="font-semibold text-slate-900 dark:text-white pr-4">
                   {faq.question}
@@ -78,6 +81,7 @@ export default function FAQPage() {
                 <motion.div
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  aria-hidden="true"
                   className="flex-shrink-0 text-slate-400"
                 >
                   <ChevronDown size={20} />
@@ -85,6 +89,10 @@ export default function FAQPage() {
               </button>
               
               <motion.div
+                id={`faq-answer-${i}`}
+                role="region"
+                aria-labelledby={`faq-question-${i}`}
+                inert={openIndex !== i}
                 initial={false}
                 animate={{ 
                   height: openIndex === i ? 'auto' : 0,
