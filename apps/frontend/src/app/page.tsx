@@ -446,7 +446,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- PROFESSOR TESTIMONIALS --- */}
+        {/* --- ILLUSTRATIVE EDUCATOR SCENARIOS (not attributed to real people) --- */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div 
@@ -456,10 +456,10 @@ export default function HomePage() {
               className="text-center max-w-3xl mx-auto mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                What Professors Are Saying
+                What It Could Mean for You
               </h2>
               <p className="text-lg text-slate-600">
-                Real feedback from educators using DeepRubric
+                Illustrative examples of how educators can use DeepRubric
               </p>
             </motion.div>
 
@@ -475,12 +475,12 @@ export default function HomePage() {
                   "I was grading 150 essays every 2 weeks on Sunday nights. Now I spend 45 minutes reviewing. I got my life back."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
-                    DR
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                    <FileText size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900">Dr. Rebecca Miller</p>
-                    <p className="text-sm text-slate-500">English, University of Toronto</p>
+                    <p className="font-semibold text-slate-900">English instructor</p>
+                    <p className="text-sm text-slate-500">150-student essay course</p>
                   </div>
                 </div>
               </motion.div>
@@ -493,15 +493,15 @@ export default function HomePage() {
                 className="p-6 rounded-2xl bg-slate-50 border border-slate-200"
               >
                 <p className="text-slate-700 mb-6 italic">
-                  "Turnitin couldn't catch AI code. DeepRubric found 12 submissions in the first assignment I ran through it."
+                  "Our usual plagiarism checks missed AI-generated code. DeepRubric flagged 12 submissions in the first assignment I ran through it."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
-                    JP
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                    <AlertTriangle size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900">Prof. James Park</p>
-                    <p className="text-sm text-slate-500">Computer Science, Waterloo</p>
+                    <p className="font-semibold text-slate-900">Computer science instructor</p>
+                    <p className="text-sm text-slate-500">Introductory programming course</p>
                   </div>
                 </div>
               </motion.div>
@@ -517,12 +517,12 @@ export default function HomePage() {
                   "We spent 3 weeks compiling accreditation reports. DeepRubric generated it in 47 minutes."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
-                    SM
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                    <Network size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900">Dr. Sarah MacDonald</p>
-                    <p className="text-sm text-slate-500">Nursing Program Director</p>
+                    <p className="font-semibold text-slate-900">Nursing program director</p>
+                    <p className="text-sm text-slate-500">Accreditation reporting</p>
                   </div>
                 </div>
               </motion.div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useActionState, useEffect, useState } from 'react';
-import { Mail, MessageSquare, Clock, Shield, BookOpen, Star, Zap, CheckCircle, AlertCircle, HelpCircle, Calendar, ExternalLink, LifeBuoy, Send } from 'lucide-react';
+import { Mail, MessageSquare, GraduationCap, Users, Clock, Shield, BookOpen, Star, Zap, CheckCircle, AlertCircle, HelpCircle, Calendar, ExternalLink, LifeBuoy, Send } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import { submitSupportRequest } from '@/app/actions/support';
 
@@ -462,64 +462,44 @@ export default function SupportPage() {
           </form>
         </div>
 
-        {/* Customer Testimonials */}
+        {/* Illustrative support scenarios (not attributed to real people) */}
         <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">What Our Customers Say</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-2 text-center">The Support We Aim For</h2>
+          <p className="text-sm text-slate-500 mb-6 text-center">Illustrative examples, not customer reviews</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                </div>
-                <span className="text-sm text-slate-600">5.0/5</span>
-              </div>
               <p className="text-slate-600 mb-4 italic">
                 "The support team resolved our grading system issue in under 30 minutes. Incredible service!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">JD</div>
+                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white"><GraduationCap size={18} aria-hidden="true" /></div>
                 <div>
-                  <div className="font-semibold text-slate-900">Jessica Davis</div>
-                  <div className="text-sm text-slate-600">University Professor</div>
+                  <div className="font-semibold text-slate-900">University Professor</div>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                </div>
-                <span className="text-sm text-slate-600">5.0/5</span>
-              </div>
               <p className="text-slate-600 mb-4 italic">
-                "Outstanding documentation and responsive support. DeepRubric has transformed our grading workflow."
+                "Clear guidance and responsive support. DeepRubric has transformed our grading workflow."
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">MR</div>
+                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center text-white"><Users size={18} aria-hidden="true" /></div>
                 <div>
-                  <div className="font-semibold text-slate-900">Michael Rodriguez</div>
-                  <div className="text-sm text-slate-600">Department Chair</div>
+                  <div className="font-semibold text-slate-900">Department Chair</div>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-200">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                </div>
-                <span className="text-sm text-slate-600">5.0/5</span>
-              </div>
               <p className="text-slate-600 mb-4 italic">
                 "The 24/7 chat support is a lifesaver during finals week. Always helpful and knowledgeable."
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold">SA</div>
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white"><BookOpen size={18} aria-hidden="true" /></div>
                 <div>
-                  <div className="font-semibold text-slate-900">Sarah Anderson</div>
-                  <div className="text-sm text-slate-600">Teaching Assistant</div>
+                  <div className="font-semibold text-slate-900">Teaching Assistant</div>
                 </div>
               </div>
             </div>
