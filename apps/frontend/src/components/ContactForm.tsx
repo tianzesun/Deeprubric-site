@@ -3,8 +3,9 @@
 import React from 'react';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
-import { Send, Loader2, CheckCircle2, X, Building2, User, Mail } from 'lucide-react';
-import { submitContactForm } from '../app/actions/contact';
+import Link from 'next/link';
+import { Send, Loader2, CheckCircle2, Building2, User, Mail } from 'lucide-react';
+import { submitContactForm, type ContactFormState } from '../app/actions/contact';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -54,77 +55,117 @@ export const ContactForm: React.FC = () => {
     );
   }
 
+  const fieldErrors = state?.fieldErrors ?? {};
+  const inputClass = (field: keyof NonNullable<ContactFormState['fieldErrors']>) =>
+    `w-full bg-slate-50 dark:bg-slate-800/50 border ${
+      fieldErrors[field] ? 'border-red-400 dark:border-red-600' : 'border-slate-200 dark:border-slate-700'
+    } rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all dark:text-white placeholder:text-slate-400`;
+  const fieldError = (field: keyof NonNullable<ContactFormState['fieldErrors']>) =>
+    fieldErrors[field] && (
+      <p id={`contact-${field}-error`} className="text-xs text-red-600 dark:text-red-400">
+        {fieldErrors[field]}
+      </p>
+    );
+  const errorProps = (field: keyof NonNullable<ContactFormState['fieldErrors']>) => ({
+    'aria-invalid': fieldErrors[field] ? true : undefined,
+    'aria-describedby': fieldErrors[field] ? `contact-${field}-error` : undefined,
+  });
+
   return (
     <form action={formAction} className="space-y-5">
       {state?.error && (
-        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg flex items-center justify-between">
+        <div role="alert" className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg">
           <span className="text-sm font-medium">{state.error}</span>
-          <button 
-            type="button" 
-            onClick={() => window.location.reload()}
-            className="p-1 hover:bg-red-100 dark:hover:bg-red-800/50 rounded transition-colors"
-          >
-            <X size={16} />
-          </button>
         </div>
       )}
+
+      {/* Honeypot field: hidden from people and assistive tech, bots tend to fill it in */}
+      <div aria-hidden="true" className="absolute -left-[10000px] w-px h-px overflow-hidden">
+        <label htmlFor="contact-website">Website</label>
+        <input id="contact-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
       
       <div className="space-y-2">
-        <label className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
-          <User size={14} /> Full Name
+        <label htmlFor="contact-fullName" className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <User size={14} aria-hidden="true" /> Full Name
         </label>
         <input 
+          id="contact-fullName"
           required 
           type="text" 
           name="fullName"
+          autoComplete="name"
+          maxLength={120}
+          defaultValue={state?.values?.fullName}
           placeholder="Enter your name" 
-          className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all dark:text-white placeholder:text-slate-400" 
+          className={inputClass('fullName')}
+          {...errorProps('fullName')}
         />
+        {fieldError('fullName')}
       </div>
 
       <div className="space-y-2">
-        <label className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
-          <Building2 size={14} /> Institution
+        <label htmlFor="contact-institution" className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <Building2 size={14} aria-hidden="true" /> Institution
         </label>
         <input 
+          id="contact-institution"
           required 
           type="text" 
           name="institution"
+          autoComplete="organization"
+          maxLength={200}
+          defaultValue={state?.values?.institution}
           placeholder="University or organization name" 
-          className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all dark:text-white placeholder:text-slate-400" 
+          className={inputClass('institution')}
+          {...errorProps('institution')}
         />
+        {fieldError('institution')}
       </div>
 
       <div className="space-y-2">
-        <label className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
-          <Mail size={14} /> Email Address
+        <label htmlFor="contact-email" className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <Mail size={14} aria-hidden="true" /> Email Address
         </label>
         <input 
+          id="contact-email"
           required 
           type="email" 
           name="email"
+          autoComplete="email"
+          maxLength={254}
+          defaultValue={state?.values?.email}
           placeholder="your.email@institution.edu" 
-          className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all dark:text-white placeholder:text-slate-400" 
+          className={inputClass('email')}
+          {...errorProps('email')}
         />
+        {fieldError('email')}
       </div>
 
       <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="contact-message" className="text-sm font-medium text-slate-700 dark:text-slate-300">
           How can we help?
         </label>
         <textarea 
+          id="contact-message"
           required 
           name="message"
           rows={4} 
+          maxLength={5000}
+          defaultValue={state?.values?.message}
           placeholder="Tell us about your assessment needs, the size of your institution, or any questions you have..." 
-          className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all dark:text-white resize-none placeholder:text-slate-400" 
+          className={`${inputClass('message')} resize-none`}
+          {...errorProps('message')}
         />
+        {fieldError('message')}
       </div>
 
       <SubmitButton />
       
       <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
-        By submitting, you agree to our privacy policy. We'll never share your information.
+        By submitting, you agree to our{' '}
+        <Link href="/privacy" className="underline hover:text-indigo-600 dark:hover:text-indigo-400">privacy policy</Link>.
+        {' '}We'll never share your information.
       </p>
     </form>
   );

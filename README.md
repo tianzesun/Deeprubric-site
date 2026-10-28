@@ -110,6 +110,7 @@ Create `.env.local` in the frontend directory:
 ```bash
 NEXT_PUBLIC_API_URL=http://localhost:8000
 NEXT_PUBLIC_WS_URL=ws://localhost:8000
+FORMSPREE_FORM_ID=your-form-id   # from https://formspree.io, the part after /f/
 ```
 
 4. **Start the development server**
@@ -234,6 +235,7 @@ pnpm start
 Set up environment variables for production:
 - `NEXT_PUBLIC_API_URL` - Backend API endpoint
 - `NEXT_PUBLIC_WS_URL` - WebSocket endpoint for real-time features
+- `FORMSPREE_FORM_ID` - Formspree form that receives "Request Demo" submissions (server-only; without it the form shows an error)
 - `NODE_ENV` - Set to 'production'
 
 ### Docker Deployment
