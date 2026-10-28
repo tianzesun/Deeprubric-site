@@ -2,6 +2,7 @@
 
 import { randomUUID } from 'crypto';
 import { z } from 'zod';
+import { sendToFormspree } from '../../lib/formspree';
 
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, 'Please enter your name').max(120, 'Name is too long'),
@@ -47,29 +48,13 @@ export async function submitContactForm(
   }
 
   try {
-    const formId = process.env.FORMSPREE_FORM_ID;
-    if (!formId) {
-      throw new Error('FORMSPREE_FORM_ID is not set');
-    }
-
-    // Formspree uses the "email" field as the reply-to address and "_subject" as the email subject
-    const response = await fetch(`https://formspree.io/f/${encodeURIComponent(formId)}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        name: parsed.data.fullName,
-        institution: parsed.data.institution,
-        email: parsed.data.email,
-        message: parsed.data.message,
-        _subject: `DeepRubric demo request: ${parsed.data.institution}`,
-      }),
-      signal: AbortSignal.timeout(10000),
-      cache: 'no-store',
+    await sendToFormspree({
+      name: parsed.data.fullName,
+      institution: parsed.data.institution,
+      email: parsed.data.email,
+      message: parsed.data.message,
+      _subject: `DeepRubric demo request: ${parsed.data.institution}`,
     });
-
-    if (!response.ok) {
-      throw new Error(`Formspree responded with ${response.status}`);
-    }
 
     return { success: true };
   } catch (error) {

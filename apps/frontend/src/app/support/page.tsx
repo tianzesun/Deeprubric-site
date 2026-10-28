@@ -1,11 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Headphones, Mail, Phone, MessageSquare, Clock, Shield, Users, Video, BookOpen, Globe, Star, Zap, CheckCircle, AlertCircle, HelpCircle, Calendar, ArrowRight, ExternalLink, LifeBuoy, Send } from 'lucide-react';
+import React, { useActionState, useEffect, useState } from 'react';
+import { Mail, MessageSquare, Clock, Shield, BookOpen, Star, Zap, CheckCircle, AlertCircle, HelpCircle, Calendar, ExternalLink, LifeBuoy, Send } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
+import { submitSupportRequest } from '@/app/actions/support';
 
 // Create a SendIcon component
 const SendIcon = () => <Send size={16} />;
+
+interface SupportItem {
+  title: string;
+  desc: string;
+  link: string;
+  icon: React.ElementType;
+  badge?: string;
+}
 
 export default function SupportPage() {
   const [activeTab, setActiveTab] = useState('all');
@@ -17,7 +26,7 @@ export default function SupportPage() {
     priority: 'medium'
   });
 
-  const supportOptions = [
+  const supportOptions: { id: string; title: string; icon: React.ElementType; color: string; bgColor: string; items: SupportItem[] }[] = [
     {
       id: 'quick',
       title: 'Quick Help',
@@ -25,10 +34,9 @@ export default function SupportPage() {
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
       items: [
-        { title: 'Knowledge Base', desc: 'Self-service articles and guides', link: '/docs', icon: BookOpen },
         { title: 'FAQ', desc: 'Frequently asked questions', link: '/faq', icon: HelpCircle },
-        { title: 'Video Tutorials', desc: 'Step-by-step video guides', link: '/videos', icon: Video },
-        { title: 'Community Forum', desc: 'Connect with other users', link: '/community', icon: Users }
+        { title: 'How It Works', desc: 'From rubric to published grades in four steps', link: '/#how-it-works', icon: BookOpen },
+        { title: 'Features', desc: 'Everything DeepRubric can do', link: '/features', icon: Star }
       ]
     },
     {
@@ -38,10 +46,8 @@ export default function SupportPage() {
       color: 'text-green-600',
       bgColor: 'bg-green-50',
       items: [
-        { title: 'Live Chat', desc: 'Instant help from our team', link: '#chat', icon: MessageSquare, badge: '24/7' },
         { title: 'Email Support', desc: 'Detailed assistance via email', link: 'mailto:support@deeprubric.ai', icon: Mail },
-        { title: 'Phone Support', desc: 'Speak directly with support', link: 'tel:+15551234567', icon: Phone },
-        { title: 'Schedule Call', desc: 'Book a consultation', link: '#schedule', icon: Calendar }
+        { title: 'Request a Demo', desc: 'Book a walkthrough with our team', link: '/#contact', icon: Calendar }
       ]
     },
     {
@@ -51,18 +57,22 @@ export default function SupportPage() {
       color: 'text-red-600',
       bgColor: 'bg-red-50',
       items: [
-        { title: 'Critical Issues', desc: 'System outages and urgent problems', link: 'tel:+15559990000', icon: AlertCircle, badge: '24/7' },
+        { title: 'Critical Issues', desc: 'System outages and urgent problems', link: 'mailto:support@deeprubric.ai?subject=URGENT', icon: AlertCircle },
         { title: 'Security Issues', desc: 'Report security vulnerabilities', link: 'mailto:security@deeprubric.ai', icon: Shield },
         { title: 'Business Hours', desc: 'Standard support during business hours', link: 'mailto:support@deeprubric.ai', icon: Clock }
       ]
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
+  const [submitState, submitAction, isSubmitting] = useActionState(submitSupportRequest, null);
+  const fieldErrors = submitState?.fieldErrors ?? {};
+
+  // Clear the form once the message has been sent
+  useEffect(() => {
+    if (submitState?.success) {
+      setFormData({ name: '', email: '', subject: '', message: '', priority: 'medium' });
+    }
+  }, [submitState]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -131,19 +141,8 @@ export default function SupportPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-1">Email Support</h3>
-                  <p className="text-slate-600 mb-2">support@deeprubric.ai</p>
+                  <a href="mailto:support@deeprubric.ai" className="block text-slate-600 hover:text-indigo-600 mb-2">support@deeprubric.ai</a>
                   <p className="text-sm text-slate-500">Response time: 2-4 hours during business hours</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-1">Phone Support</h3>
-                  <p className="text-slate-600 mb-2">+1 (555) 123-4567</p>
-                  <p className="text-sm text-slate-500">Monday - Friday, 9 AM - 6 PM PST</p>
                 </div>
               </div>
 
@@ -173,7 +172,8 @@ export default function SupportPage() {
                 <p className="text-red-700 text-sm mb-3">
                   For system outages or critical issues affecting your institution
                 </p>
-                <p className="text-red-600 font-mono text-lg">+1 (555) 999-0000</p>
+                <a href="mailto:support@deeprubric.ai?subject=URGENT" className="block text-red-600 hover:text-red-800 font-mono text-lg">support@deeprubric.ai</a>
+                <p className="text-red-700 text-xs mt-1">Put URGENT in the subject line</p>
               </div>
 
               <div className="bg-white rounded-lg p-4 border border-red-200">
@@ -184,7 +184,7 @@ export default function SupportPage() {
                 <p className="text-red-700 text-sm mb-3">
                   Emergency support available 24/7 for enterprise customers
                 </p>
-                <p className="text-red-600 font-mono text-lg">support@deeprubric.ai</p>
+                <a href="mailto:support@deeprubric.ai" className="block text-red-600 hover:text-red-800 font-mono text-lg">support@deeprubric.ai</a>
               </div>
             </div>
           </div>
@@ -304,22 +304,14 @@ export default function SupportPage() {
         {/* Support Hours */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Support Hours</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 border border-blue-200">
               <div className="flex items-center gap-3 mb-2">
                 <Mail size={20} className="text-blue-600" />
-                <h3 className="font-semibold text-slate-900">Email & Chat</h3>
+                <h3 className="font-semibold text-slate-900">Email</h3>
               </div>
               <p className="text-slate-600">Mon - Fri: 9 AM - 6 PM PST</p>
               <p className="text-slate-600">Weekends: Automated support</p>
-            </div>
-            <div className="bg-white rounded-lg p-4 border border-green-200">
-              <div className="flex items-center gap-3 mb-2">
-                <Phone size={20} className="text-green-600" />
-                <h3 className="font-semibold text-slate-900">Phone</h3>
-              </div>
-              <p className="text-slate-600">Mon - Fri: 9 AM - 6 PM PST</p>
-              <p className="text-slate-600">Weekends: Emergency only</p>
             </div>
             <div className="bg-white rounded-lg p-4 border border-red-200">
               <div className="flex items-center gap-3 mb-2">
@@ -336,7 +328,25 @@ export default function SupportPage() {
         <div className="bg-white rounded-lg shadow-sm p-8 border border-slate-200 mb-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h2>
           
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {submitState?.success && (
+            <div role="status" className="mb-6 bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-lg flex items-center gap-2">
+              <CheckCircle size={18} />
+              <span className="text-sm font-medium">Thanks, your message has been sent. We'll reply by email.</span>
+            </div>
+          )}
+          {submitState?.error && (
+            <div role="alert" className="mb-6 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
+              <span className="text-sm font-medium">{submitState.error}</span>
+            </div>
+          )}
+
+          <form action={submitAction} className="space-y-6">
+            {/* Honeypot field: hidden from people and assistive tech, bots tend to fill it in */}
+            <div aria-hidden="true" className="absolute -left-[10000px] w-px h-px overflow-hidden">
+              <label htmlFor="support-website">Website</label>
+              <input id="support-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
@@ -351,7 +361,10 @@ export default function SupportPage() {
                   required
                   className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors hover:border-slate-400"
                   placeholder="Enter your full name"
+                  aria-invalid={fieldErrors.name ? true : undefined}
+                  aria-describedby={fieldErrors.name ? 'support-name-error' : undefined}
                 />
+                {fieldErrors.name && <p id="support-name-error" className="text-xs text-red-600 mt-1">{fieldErrors.name}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
@@ -366,7 +379,10 @@ export default function SupportPage() {
                   required
                   className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors hover:border-slate-400"
                   placeholder="your@email.com"
+                  aria-invalid={fieldErrors.email ? true : undefined}
+                  aria-describedby={fieldErrors.email ? 'support-email-error' : undefined}
                 />
+                {fieldErrors.email && <p id="support-email-error" className="text-xs text-red-600 mt-1">{fieldErrors.email}</p>}
               </div>
             </div>
 
@@ -384,7 +400,10 @@ export default function SupportPage() {
                   required
                   className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors hover:border-slate-400"
                   placeholder="Brief description of your issue"
+                  aria-invalid={fieldErrors.subject ? true : undefined}
+                  aria-describedby={fieldErrors.subject ? 'support-subject-error' : undefined}
                 />
+                {fieldErrors.subject && <p id="support-subject-error" className="text-xs text-red-600 mt-1">{fieldErrors.subject}</p>}
               </div>
               <div>
                 <label htmlFor="priority" className="block text-sm font-medium text-slate-700 mb-2">
@@ -418,7 +437,10 @@ export default function SupportPage() {
                 rows={5}
                 className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-colors hover:border-slate-400 resize-vertical"
                 placeholder="Please describe your issue in detail. Include any error messages, screenshots, or steps to reproduce the problem."
+                aria-invalid={fieldErrors.message ? true : undefined}
+                aria-describedby={fieldErrors.message ? 'support-message-error' : undefined}
               ></textarea>
+              {fieldErrors.message && <p id="support-message-error" className="text-xs text-red-600 mt-1">{fieldErrors.message}</p>}
               <p className="text-xs text-slate-500 mt-1">Tip: The more details you provide, the faster we can help you!</p>
             </div>
 
@@ -428,11 +450,12 @@ export default function SupportPage() {
               </div>
               <button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg transition-all duration-200 font-medium shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30 transform hover:-translate-y-1"
+                disabled={isSubmitting}
+                className="disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg transition-all duration-200 font-medium shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30 transform hover:-translate-y-1"
               >
                 <div className="flex items-center gap-2">
                   <SendIcon />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </div>
               </button>
             </div>

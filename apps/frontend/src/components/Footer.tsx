@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Sparkles } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +13,7 @@ export const Footer: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-                <Sparkles className="text-white" size={16} />
+                <span className="text-white font-black text-xs">D</span>
               </div>
               <span className="font-bold text-slate-900">DeepRubric</span>
             </div>

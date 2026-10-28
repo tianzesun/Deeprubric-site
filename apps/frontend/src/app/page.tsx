@@ -293,6 +293,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg"
             >
+              <p className="sm:hidden px-4 pt-3 text-xs text-slate-500 text-right">Swipe to compare &rarr;</p>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[600px]">
                   <thead>

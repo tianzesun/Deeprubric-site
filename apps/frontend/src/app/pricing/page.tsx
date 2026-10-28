@@ -81,8 +81,8 @@ export default function PricingPage() {
               Department / Institution
             </h3>
             <div className="mb-6">
-              <span className="text-slate-500">Custom pricing for </span>
-              <span className="text-4xl font-bold text-slate-900">teams</span>
+              <span className="text-4xl font-bold text-slate-900">Custom</span>
+              <span className="text-slate-500"> pricing for teams</span>
             </div>
             
             <ul className="space-y-3 mb-8">
