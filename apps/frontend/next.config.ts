@@ -13,16 +13,23 @@ const nextConfig: NextConfig = {
   // ✅ 如果不需要特定配置，建议留空或删除 turbopack 对象
   // turbopack: {},
 
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api',
-  },
-
-  async rewrites() {
+  // Security headers (Vercel ignores public/.htaccess, so they must be set here).
+  // The CSP only restricts framing, plugins, <base> and form targets; a script-src policy
+  // would need per-request nonces for Next.js inline scripts.
+  async headers() {
     return [
       {
-        // 这里的配置很棒，可以解决跨域问题
-        source: '/api/v1/:path*',
-        destination: 'http://127.0.0.1:8000/api/v1/:path*',
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'",
+          },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
       },
     ];
   },

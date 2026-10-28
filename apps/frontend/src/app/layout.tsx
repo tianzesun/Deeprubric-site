@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"; // Or your preferred font
 import "../styles/globals.css";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
+import { MotionProvider } from "../components/MotionProvider";
 import { baseOpenGraph, baseTwitter } from "../lib/metadata";
 import structuredData from "../../public/structured-data.json";
 
@@ -90,17 +91,27 @@ export default function RootLayout({
         {/* Markham standard grain overlay */}
         <div className="grain-overlay" />
         
-        {/* Global Navigation */}
-        <Navigation />
+        {/* Keyboard users can jump past the navigation */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-md focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
 
-        {/* This "main" container ensures content grows to fill space, 
-            keeping the footer at the bottom on short pages */}
-        <main className="flex-grow">
-          {children}
-        </main>
+        <MotionProvider>
+          {/* Global Navigation */}
+          <Navigation />
 
-        {/* Global Footer */}
-        <Footer />
+          {/* This "main" container ensures content grows to fill space, 
+              keeping the footer at the bottom on short pages */}
+          <main id="main-content" tabIndex={-1} className="flex-grow focus:outline-none">
+            {children}
+          </main>
+
+          {/* Global Footer */}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );
