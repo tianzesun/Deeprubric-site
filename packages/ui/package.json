@@ -25,7 +25,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --declaration --outDir dist && tsc",
+    "build": "tsc --declaration --outDir dist",
     "prepare": "pnpm run build",
     "lint": "eslint \"src/**/*.ts*\" --fix"
   },

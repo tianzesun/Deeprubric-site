@@ -17,6 +17,8 @@ dist/
 build/
 .cache/
 pnpm-debug.log
+*.tsbuildinfo
+next-env.d.ts
 
 ###############
 # Infrastructure (Keep these!)
@@ -36,6 +38,7 @@ redis_data/
 .idea/
 *.swp
 *.swo
+*:Zone.Identifier
 
 ###############
 # Testing & Coverage
@@ -47,3 +50,5 @@ __pycache__/
 
 log/
 *.log
+nohup.out
+.pids
