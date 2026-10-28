@@ -133,7 +133,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-white dark:bg-slate-950">
-      <main className="flex-grow">
+      <div className="flex-grow">
 
         {/* --- HERO SECTION --- */}
         <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 px-6 overflow-hidden">
@@ -761,7 +761,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

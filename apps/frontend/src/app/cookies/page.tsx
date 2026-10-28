@@ -52,30 +52,25 @@ export default function CookiesPage() {
     
     We may update this Cookie Policy from time to time to reflect changes in the technologies we use. We will notify you by updating the "Last updated" date at the top of this page.
     
-    If you have questions about our use of cookies, please contact us at privacy@deeprubric.com.
+    If you have questions about our use of cookies, please contact us at privacy@deeprubric.ai.
   `;
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Header - Professional Academic Style with Sticky Behavior */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-sm">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            {/* Simplified DeepRubric Logo */}
-            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-black text-sm">D</span>
-            </div>
-            <div>
-              <h1 className="text-lg font-bold text-slate-900">DeepRubric</h1>
-              <p className="text-xl font-extrabold text-slate-900">Cookie Policy</p>
-            </div>
-          </div>
-          
+      {/* Hero Section */}
+      <section className="pt-20 pb-4 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+            Cookie Policy
+          </h1>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            How DeepRubric uses cookies and similar technologies, and how you can manage them.
+          </p>
         </div>
-      </header>
+      </section>
 
       {/* Content */}
-      <main className="max-w-3xl mx-auto px-4 py-8">
+      <div className="max-w-3xl mx-auto px-4 py-8">
         {/* Reading Time Badge */}
         <div className="mb-8 text-center">
           <ReadingTimeBadge textContent={cookiePolicyContent} />
@@ -285,55 +280,13 @@ export default function CookiesPage() {
               If you have questions about our use of cookies, please contact us at:
             </p>
             <div className="space-y-3 text-slate-700">
-              <p><strong>Email:</strong> <a href="mailto:privacy@deeprubric.com" className="text-indigo-600 hover:text-indigo-700">privacy@deeprubric.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:privacy@deeprubric.ai" className="text-indigo-600 hover:text-indigo-700">privacy@deeprubric.ai</a></p>
               <p><strong>Address:</strong> DeepRubric Privacy Office, 123 Tech Street, San Francisco, CA 94107</p>
               <p><strong>Phone:</strong> <a href="tel:+15551234567" className="text-indigo-600 hover:text-indigo-700">+1 (555) 123-4567</a></p>
             </div>
           </div>
         </div>
-      </main>
-
-      {/* Footer - Professional Academic Style */}
-      <footer className="bg-white border-t border-slate-200 mt-16">
-        <div className="max-w-3xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Legal */}
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-4">Legal</h3>
-              <ul className="space-y-2 text-slate-600">
-                <li><a href="/privacy" className="hover:text-indigo-600 transition-colors">Privacy Policy</a></li>
-                <li><a href="/terms" className="hover:text-indigo-600 transition-colors">Terms of Service</a></li>
-                <li><a href="/cookies" className="hover:text-indigo-600 transition-colors">Cookie Policy</a></li>
-                <li><a href="/compliance" className="hover:text-indigo-600 transition-colors">Trust & Compliance</a></li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-4">Support</h3>
-              <ul className="space-y-2 text-slate-600">
-                <li><a href="#" className="hover:text-indigo-600 transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-indigo-600 transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-indigo-600 transition-colors">Documentation</a></li>
-              </ul>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-4">Connect</h3>
-              <ul className="space-y-2 text-slate-600">
-                <li><a href="#" className="hover:text-indigo-600 transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-indigo-600 transition-colors">GitHub</a></li>
-                <li><a href="#" className="hover:text-indigo-600 transition-colors">Twitter</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-200 mt-8 pt-8 text-center text-slate-500 text-sm">
-            © 2026 DeepRubric. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      </div>
 
       {/* Scroll to Top Button */}
       <ScrollToTop />

@@ -39,7 +39,7 @@ export default function SupportPage() {
       bgColor: 'bg-green-50',
       items: [
         { title: 'Live Chat', desc: 'Instant help from our team', link: '#chat', icon: MessageSquare, badge: '24/7' },
-        { title: 'Email Support', desc: 'Detailed assistance via email', link: 'mailto:support@deeprubric.com', icon: Mail },
+        { title: 'Email Support', desc: 'Detailed assistance via email', link: 'mailto:support@deeprubric.ai', icon: Mail },
         { title: 'Phone Support', desc: 'Speak directly with support', link: 'tel:+15551234567', icon: Phone },
         { title: 'Schedule Call', desc: 'Book a consultation', link: '#schedule', icon: Calendar }
       ]
@@ -52,8 +52,8 @@ export default function SupportPage() {
       bgColor: 'bg-red-50',
       items: [
         { title: 'Critical Issues', desc: 'System outages and urgent problems', link: 'tel:+15559990000', icon: AlertCircle, badge: '24/7' },
-        { title: 'Security Issues', desc: 'Report security vulnerabilities', link: 'mailto:security@deeprubric.com', icon: Shield },
-        { title: 'Business Hours', desc: 'Standard support during business hours', link: 'mailto:support@deeprubric.com', icon: Clock }
+        { title: 'Security Issues', desc: 'Report security vulnerabilities', link: 'mailto:security@deeprubric.ai', icon: Shield },
+        { title: 'Business Hours', desc: 'Standard support during business hours', link: 'mailto:support@deeprubric.ai', icon: Clock }
       ]
     }
   ];
@@ -118,7 +118,7 @@ export default function SupportPage() {
       </section>
 
       {/* Content */}
-      <main className="max-w-6xl mx-auto py-16 px-4">
+      <div className="max-w-6xl mx-auto py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Contact Information */}
           <div className="bg-white rounded-lg shadow-sm p-8">
@@ -131,7 +131,7 @@ export default function SupportPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-1">Email Support</h3>
-                  <p className="text-slate-600 mb-2">support@deeprubric.com</p>
+                  <p className="text-slate-600 mb-2">support@deeprubric.ai</p>
                   <p className="text-sm text-slate-500">Response time: 2-4 hours during business hours</p>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function SupportPage() {
                 <p className="text-red-700 text-sm mb-3">
                   Emergency support available 24/7 for enterprise customers
                 </p>
-                <p className="text-red-600 font-mono text-lg">support@deeprubric.com</p>
+                <p className="text-red-600 font-mono text-lg">support@deeprubric.ai</p>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function SupportPage() {
             <p className="text-slate-600 mb-4">
               Get up and running in minutes with our comprehensive setup guides.
             </p>
-            <a href="#" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
+            <a href="/#how-it-works" className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
               Get Started →
             </a>
           </div>
@@ -280,7 +280,7 @@ export default function SupportPage() {
             <p className="text-slate-600 mb-4">
               Learn how to get the most out of DeepRubric with our expert tips.
             </p>
-            <a href="#" className="text-green-600 hover:text-green-800 font-medium inline-flex items-center gap-2">
+            <a href="/faq" className="text-green-600 hover:text-green-800 font-medium inline-flex items-center gap-2">
               Learn More →
             </a>
           </div>
@@ -295,7 +295,7 @@ export default function SupportPage() {
             <p className="text-slate-600 mb-4">
               Discover powerful features that will transform your grading workflow.
             </p>
-            <a href="#" className="text-purple-600 hover:text-purple-800 font-medium inline-flex items-center gap-2">
+            <a href="/features" className="text-purple-600 hover:text-purple-800 font-medium inline-flex items-center gap-2">
               Explore →
             </a>
           </div>
@@ -502,7 +502,7 @@ export default function SupportPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Scroll to Top Button */}
       <ScrollToTop />

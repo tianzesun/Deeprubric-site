@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"; // Or your preferred font
 import "../styles/globals.css";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
+import { baseOpenGraph, baseTwitter } from "../lib/metadata";
 import structuredData from "../../public/structured-data.json";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,27 +39,15 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    ...baseOpenGraph,
     url: '/',
     title: 'DeepRubric | Professional Academic Grading & Assessment Platform',
     description: 'Human-in-the-Loop Assessment Architecture for Institutions. Advanced grading, curriculum management, and assessment tools for educational institutions.',
-    siteName: 'DeepRubric',
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'DeepRubric - Professional Academic Grading Platform',
-      },
-    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    ...baseTwitter,
     title: 'DeepRubric | Professional Academic Grading & Assessment Platform',
     description: 'Human-in-the-Loop Assessment Architecture for Institutions.',
-    images: ['/images/twitter-image.jpg'],
-    creator: '@DeepRubricAI',
   },
   robots: {
     index: true,

@@ -72,7 +72,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* Document Grid */}
-      <main className="max-w-6xl mx-auto py-16 px-6">
+      <div className="max-w-6xl mx-auto py-16 px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <PrivacyCard
             title="Information We Collect"
@@ -219,7 +219,7 @@ export default function PrivacyPage() {
             </span>
           </div>
         </motion.div>
-      </main>
+      </div>
     </div>
   );
 }

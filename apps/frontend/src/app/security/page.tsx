@@ -194,7 +194,7 @@ const SecurityPage = () => {
         </div>
       </motion.div>
 
-      <main className="relative max-w-6xl mx-auto py-20 px-6 space-y-16">
+      <div className="relative max-w-6xl mx-auto py-20 px-6 space-y-16">
         {/* Core Pillars */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }}
@@ -390,7 +390,7 @@ const SecurityPage = () => {
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gray-400/10 rounded-full blur-xl" />
           </div>
         </motion.section>
-      </main>
+      </div>
     </div>
   );
 };

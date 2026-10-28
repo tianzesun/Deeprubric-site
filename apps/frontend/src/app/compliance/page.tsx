@@ -73,7 +73,7 @@ export default function CompliancePage() {
       </section>
 
       {/* Document Grid */}
-      <main className="max-w-6xl mx-auto py-16 px-6">
+      <div className="max-w-6xl mx-auto py-16 px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <ComplianceCard
             title="Privacy Policy"
@@ -220,7 +220,7 @@ export default function CompliancePage() {
             </span>
           </div>
         </motion.div>
-      </main>
+      </div>
     </div>
   );
 }
