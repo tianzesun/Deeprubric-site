@@ -51,10 +51,10 @@ export default function FAQPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600">
             Everything you need to know about DeepRubric
           </p>
         </motion.div>
@@ -66,7 +66,7 @@ export default function FAQPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden"
+              className="bg-white border border-slate-200 rounded-2xl overflow-hidden"
             >
               <button
                 id={`faq-question-${i}`}
@@ -75,7 +75,7 @@ export default function FAQPage() {
                 aria-controls={`faq-answer-${i}`}
                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
               >
-                <span className="font-semibold text-slate-900 dark:text-white pr-4">
+                <span className="font-semibold text-slate-900 pr-4">
                   {faq.question}
                 </span>
                 <motion.div
@@ -101,7 +101,7 @@ export default function FAQPage() {
                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 className="overflow-hidden"
               >
-                <div className="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 leading-relaxed">
+                <div className="px-6 pb-6 pt-0 text-slate-600 leading-relaxed">
                   {faq.answer}
                 </div>
               </motion.div>

@@ -132,13 +132,13 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-white dark:bg-slate-950">
+    <div className="min-h-screen w-full flex flex-col bg-white">
       <div className="flex-grow">
 
         {/* --- HERO SECTION --- */}
         <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 px-6 overflow-hidden">
           {/* Premium animated background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-950 dark:via-slate-950 dark:to-emerald-950/30 -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50 -z-10" />
           
           {/* Floating gradient orbs */}
           <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300/20 rounded-full blur-3xl animate-morph" />
@@ -151,7 +151,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-8"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-medium mb-8"
               >
                 <GraduationCap size={16} />
                 <span>AI-Powered Grading for Modern Educators</span>
@@ -163,16 +163,16 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight"
               >
-                <span className="text-slate-700 dark:text-slate-300">Stop Grading on Sunday Nights.</span>
+                <span className="text-slate-700">Stop Grading on Sunday Nights.</span>
                 <br />
-                <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent dark:from-emerald-400 dark:via-emerald-300 dark:to-teal-400">DeepRubric Does It For You.</span>
+                <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">DeepRubric Does It For You.</span>
               </motion.h1>
 
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+                className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
                 You create the rubric. AI grades every submission, writes detailed feedback, and catches cheating.
                 You review, adjust if needed, and hit publish. Get your evenings and weekends back.
@@ -193,7 +193,7 @@ export default function HomePage() {
                 </Link>
                 <Link 
                   href="#how-it-works"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl hover:bg-white dark:hover:bg-slate-800 text-slate-900 dark:text-white rounded-xl font-semibold transition-all border border-slate-200/50 dark:border-slate-700/50 hover:-translate-y-1 active:translate-y-0 shadow-md"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 backdrop-blur-xl hover:bg-white text-slate-900 rounded-xl font-semibold transition-all border border-slate-200/50 hover:-translate-y-1 active:translate-y-0 shadow-md"
                 >
                   <Play size={18} />
                   See How It Works
@@ -204,7 +204,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                className="text-sm text-slate-500 dark:text-slate-400 text-center"
+                className="text-sm text-slate-500 text-center"
               >
                 No credit card required. Cancel any time. Grade up to 100 submissions completely free.
               </motion.p>
@@ -213,7 +213,7 @@ export default function HomePage() {
         </section>
 
         {/* --- WHAT MAKES US DIFFERENT --- */}
-        <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-950">
+        <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -221,14 +221,14 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center max-w-3xl mx-auto mb-16"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 dark:bg-purple-950/50 border border-purple-100 dark:border-purple-900 text-purple-600 dark:text-purple-400 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-100 text-purple-600 text-sm font-medium mb-6">
                 <Sparkles size={16} />
                 <span>What Makes DeepRubric Different</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Not Just Another Grading Tool
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
+              <p className="text-lg text-slate-600">
                 Gradescope and Crowdmark digitize grading. DeepRubric automates it — with AI scoring, 
                 written feedback, and academic integrity built in from the start.
               </p>
@@ -242,19 +242,19 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative flex flex-col gap-4 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 group hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10"
+                  className="relative flex flex-col gap-4 p-6 rounded-2xl bg-white border border-slate-200 hover:border-emerald-300 transition-all duration-300 group hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10"
                 >
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
                     {feature.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-3 text-sm">
+                    <p className="text-slate-600 leading-relaxed mb-3 text-sm">
                       {feature.description}
                     </p>
-                    <span className="inline-block px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full">
+                    <span className="inline-block px-3 py-1 text-xs font-medium bg-emerald-100 text-emerald-700 rounded-full">
                       {feature.highlight}
                     </span>
                   </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+                className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
               >
                 How We Compare
               </motion.h2>
@@ -281,7 +281,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-lg text-slate-600 dark:text-slate-400"
+                className="text-lg text-slate-600"
               >
                 See how DeepRubric stacks up against other grading platforms
               </motion.p>
@@ -291,39 +291,39 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg"
+              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg"
             >
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[600px]">
                   <thead>
-                    <tr className="bg-slate-50 dark:bg-slate-800">
-                      <th className="text-left px-6 py-4 text-sm font-semibold text-slate-900 dark:text-white">Feature</th>
+                    <tr className="bg-slate-50">
+                      <th className="text-left px-6 py-4 text-sm font-semibold text-slate-900">Feature</th>
                       <th className="px-4 py-4 text-center">
-                        <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full text-sm font-semibold">
+                        <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">
                           DeepRubric
                         </span>
                       </th>
                       <th className="px-4 py-4 text-center">
-                        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Gradescope</span>
+                        <span className="text-sm font-medium text-slate-500">Gradescope</span>
                       </th>
                       <th className="px-4 py-4 text-center">
-                        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Crowdmark</span>
+                        <span className="text-sm font-medium text-slate-500">Crowdmark</span>
                       </th>
                       <th className="px-4 py-4 text-center">
-                        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">FeedbackFruits</span>
+                        <span className="text-sm font-medium text-slate-500">FeedbackFruits</span>
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tbody className="divide-y divide-slate-200">
                     {comparisonFeatures.map((row, i) => (
-                      <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">{row.feature}</td>
+                      <tr key={i} className="hover:bg-slate-50 transition-colors">
+                        <td className="px-6 py-4 text-sm text-slate-700">{row.feature}</td>
                         {(['deeprubric', 'gradescope', 'crowdmark', 'feedbackfruits'] as const).map((platform) => (
                           <td key={platform} className="px-4 py-4 text-center">
                             {row[platform] ? (
                               <CheckCircle2 className={`w-6 h-6 mx-auto ${platform === 'deeprubric' ? 'text-emerald-500' : 'text-slate-400'}`} />
                             ) : (
-                              <span className="text-slate-300 dark:text-slate-600">—</span>
+                              <span className="text-slate-300">—</span>
                             )}
                           </td>
                         ))}
@@ -337,7 +337,7 @@ export default function HomePage() {
         </section>
 
         {/* --- STATS SECTION --- */}
-        <section className="py-16 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <section className="py-16 bg-slate-50 border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-3 gap-8">
               {stats.map((stat, i) => (
@@ -349,19 +349,19 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm font-semibold text-slate-900 dark:text-white mb-1">
+                  <div className="text-sm font-semibold text-slate-900 mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">
+                  <div className="text-xs text-slate-500">
                     {stat.description}
                   </div>
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-6 italic">
+            <p className="text-center text-xs text-slate-400 mt-6 italic">
               {statsFootnote}
             </p>
           </div>
@@ -376,7 +376,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+                className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
               >
                 How DeepRubric Works
               </motion.h2>
@@ -385,7 +385,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-lg text-slate-600 dark:text-slate-400"
+                className="text-lg text-slate-600"
               >
                 From rubric to published grades in four simple steps
               </motion.p>
@@ -402,21 +402,21 @@ export default function HomePage() {
                   className="relative"
                 >
                   {i < howItWorks.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] right-0 h-0.5 bg-gradient-to-r from-emerald-200 to-transparent dark:from-emerald-800" />
+                    <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] right-0 h-0.5 bg-gradient-to-r from-emerald-200 to-transparent" />
                   )}
                   <div className="text-center">
                     <div className="relative inline-flex mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                      <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600">
                         {step.icon}
                       </div>
                       <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center">
                         {step.step}
                       </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -427,16 +427,16 @@ export default function HomePage() {
         </section>
 
         {/* --- LMS INTEGRATIONS --- */}
-        <section className="py-16 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 border-y border-slate-200 dark:border-slate-700">
+        <section className="py-16 bg-gradient-to-r from-slate-50 to-slate-100 border-y border-slate-200">
           <div className="max-w-5xl mx-auto px-6 text-center">
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-6">
+            <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-6">
               Works With Your Existing LMS
             </h3>
             <div className="flex flex-wrap justify-center gap-6">
               {integrations.map((lms, i) => (
                 <div 
                   key={i}
-                  className="px-6 py-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium shadow-sm"
+                  className="px-6 py-3 bg-white rounded-lg border border-slate-200 text-slate-700 font-medium shadow-sm"
                 >
                   {lms}
                 </div>
@@ -446,7 +446,7 @@ export default function HomePage() {
         </section>
 
         {/* --- PROFESSOR TESTIMONIALS --- */}
-        <section className="py-20 bg-white dark:bg-slate-950">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -454,10 +454,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center max-w-3xl mx-auto mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 What Professors Are Saying
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
+              <p className="text-lg text-slate-600">
                 Real feedback from educators using DeepRubric
               </p>
             </motion.div>
@@ -468,18 +468,18 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+                className="p-6 rounded-2xl bg-slate-50 border border-slate-200"
               >
-                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
+                <p className="text-slate-700 mb-6 italic">
                   "I was grading 150 essays every 2 weeks on Sunday nights. Now I spend 45 minutes reviewing. I got my life back."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
                     DR
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 dark:text-white">Dr. Rebecca Miller</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">English, University of Toronto</p>
+                    <p className="font-semibold text-slate-900">Dr. Rebecca Miller</p>
+                    <p className="text-sm text-slate-500">English, University of Toronto</p>
                   </div>
                 </div>
               </motion.div>
@@ -489,18 +489,18 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+                className="p-6 rounded-2xl bg-slate-50 border border-slate-200"
               >
-                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
+                <p className="text-slate-700 mb-6 italic">
                   "Turnitin couldn't catch AI code. DeepRubric found 12 submissions in the first assignment I ran through it."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
                     JP
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 dark:text-white">Prof. James Park</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Computer Science, Waterloo</p>
+                    <p className="font-semibold text-slate-900">Prof. James Park</p>
+                    <p className="text-sm text-slate-500">Computer Science, Waterloo</p>
                   </div>
                 </div>
               </motion.div>
@@ -510,18 +510,18 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+                className="p-6 rounded-2xl bg-slate-50 border border-slate-200"
               >
-                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
+                <p className="text-slate-700 mb-6 italic">
                   "We spent 3 weeks compiling accreditation reports. DeepRubric generated it in 47 minutes."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
                     SM
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 dark:text-white">Dr. Sarah MacDonald</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Nursing Program Director</p>
+                    <p className="font-semibold text-slate-900">Dr. Sarah MacDonald</p>
+                    <p className="text-sm text-slate-500">Nursing Program Director</p>
                   </div>
                 </div>
               </motion.div>
@@ -530,7 +530,7 @@ export default function HomePage() {
         </section>
 
         {/* --- USE CASES SECTION --- */}
-        <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-950">
+        <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <motion.h2 
@@ -538,7 +538,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+                className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
               >
                 Real Problems, Solved
               </motion.h2>
@@ -547,7 +547,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-lg text-slate-600 dark:text-slate-400"
+                className="text-lg text-slate-600"
               >
                 How educators are actually using DeepRubric
               </motion.p>
@@ -561,20 +561,20 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
                       {useCase.icon}
                     </div>
                     <span className="px-3 py-1 text-xs font-bold bg-emerald-600 text-white rounded-full">
                       {useCase.metric}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3">
                     {useCase.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {useCase.description}
                   </p>
                 </motion.div>
@@ -588,7 +588,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="mt-12 text-center"
             >
-              <p className="text-sm text-slate-500 dark:text-slate-400 italic">
+              <p className="text-sm text-slate-500 italic">
                 These examples are based on common educator workflows. Your results may vary based on course size and rubric complexity.
               </p>
             </motion.div>
@@ -596,17 +596,17 @@ export default function HomePage() {
         </section>
 
         {/* --- SECURITY & TRUST SECTION --- */}
-        <section className="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <section className="py-20 bg-slate-50 border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
-                <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm uppercase tracking-wider mb-4">
+                <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-4">
                   <ShieldCheck size={18} /> Enterprise Security
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                   Your Data, Protected
                 </h2>
-                <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
                   We understand the sensitivity of academic data. DeepRubric employs industry-leading 
                   security measures to ensure your institution's information remains private and protected.
                 </p>
@@ -618,7 +618,7 @@ export default function HomePage() {
                     "GDPR and FERPA aligned data handling",
                     "Role-based access controls and audit logs"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                    <li key={i} className="flex items-start gap-3 text-slate-600">
                       <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -681,7 +681,7 @@ export default function HomePage() {
         </section>
 
         {/* --- CONTACT SECTION --- */}
-        <section id="contact" className="py-20 md:py-28 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section id="contact" className="py-20 md:py-28 px-6 bg-slate-50">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -689,7 +689,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 text-sm font-medium mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-600 text-sm font-medium mb-6"
                 >
                   <MessageSquare size={16} /> Get Started
                 </motion.div>
@@ -699,7 +699,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6"
                 >
                   See DeepRubric in Action
                 </motion.h2>
@@ -709,7 +709,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
+                  className="text-lg text-slate-600 mb-8 leading-relaxed"
                 >
                   Schedule a personalized demo. Bring a real assignment — we'll run it through 
                   DeepRubric live and show you AI scoring, feedback generation, and integrity 
@@ -724,21 +724,21 @@ export default function HomePage() {
                   className="space-y-4"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
                       <Mail size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Email us at</p>
-                      <p className="font-semibold text-slate-900 dark:text-white">contact@deeprubric.ai</p>
+                      <p className="text-sm text-slate-500">Email us at</p>
+                      <p className="font-semibold text-slate-900">contact@deeprubric.ai</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
                       <Award size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Demo includes</p>
-                      <p className="font-semibold text-slate-900 dark:text-white">Live AI grading on your own assignment</p>
+                      <p className="text-sm text-slate-500">Demo includes</p>
+                      <p className="font-semibold text-slate-900">Live AI grading on your own assignment</p>
                     </div>
                   </div>
                 </motion.div>
@@ -750,9 +750,9 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 rounded-3xl blur-2xl -z-10" />
-                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 md:p-10 rounded-2xl shadow-xl">
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
+                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-3xl blur-2xl -z-10" />
+                <div className="bg-white border border-slate-200 p-8 md:p-10 rounded-2xl shadow-xl">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-6">
                     Request a Demo
                   </h3>
                   <ContactForm />

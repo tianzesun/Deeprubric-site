@@ -8,12 +8,6 @@
     --background-rgb: 248, 250, 252; /* slate-50 */
   }
 
-  /* This tells CSS to change variables when the 'dark' class is present */
-  .dark {
-    --foreground-rgb: 248, 250, 252; /* slate-50 */
-    --background-rgb: 2, 6, 23; /* slate-950 */
-  }
-
   body {
     color: rgb(var(--foreground-rgb));
     background-color: rgb(var(--background-rgb));
@@ -23,7 +17,7 @@
 
 /* Custom "Glass" utility */
 .glass-effect {
-  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-2xl border border-white/40 dark:border-slate-800/40;
+  @apply bg-white/70 backdrop-blur-2xl border border-white/40;
 }
 
 @layer utilities {

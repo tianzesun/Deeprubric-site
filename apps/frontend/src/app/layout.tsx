@@ -80,7 +80,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} min-h-screen flex flex-col bg-slate-50 dark:bg-[#020617] transition-colors duration-1000`}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-slate-50 transition-colors duration-1000`}>
         {/* Organization structured data; "<" is escaped so the JSON can't close the script tag */}
         <script
           type="application/ld+json"

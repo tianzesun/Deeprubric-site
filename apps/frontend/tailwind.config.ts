@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  // 1. CRITICAL: Enable class-based dark mode
+  // The site is light-only. Keep 'class' so stray dark: utilities never follow the OS setting
   darkMode: 'class', 
 
   content: [

@@ -15,10 +15,10 @@ export default function PricingPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Simple, Transparent Pricing
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             One flat price per instructor. No per student fees. No hidden costs.
           </p>
         </motion.div>
@@ -28,14 +28,14 @@ export default function PricingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8"
+            className="bg-white border border-slate-200 rounded-2xl p-8"
           >
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">
               Individual Instructor
             </h3>
             <div className="mb-6">
-              <span className="text-4xl font-bold text-slate-900 dark:text-white">$12</span>
-              <span className="text-slate-500 dark:text-slate-400"> / month</span>
+              <span className="text-4xl font-bold text-slate-900">$12</span>
+              <span className="text-slate-500"> / month</span>
             </div>
             
             <ul className="space-y-3 mb-8">
@@ -48,7 +48,7 @@ export default function PricingPage() {
                 "Course analytics and insights",
                 "Email support"
               ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+                <li key={i} className="flex items-start gap-3 text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                   <span>{feature}</span>
                 </li>
@@ -62,7 +62,7 @@ export default function PricingPage() {
               Start Free Trial
             </Link>
             
-            <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-3">
+            <p className="text-center text-sm text-slate-500 mt-3">
               Grade your first 100 submissions free. No credit card required.
             </p>
           </motion.div>
@@ -71,18 +71,18 @@ export default function PricingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white dark:bg-slate-900 border-2 border-emerald-500 rounded-2xl p-8 relative"
+            className="bg-white border-2 border-emerald-500 rounded-2xl p-8 relative"
           >
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-emerald-600 text-white text-xs font-semibold rounded-full">
               Recommended
             </div>
             
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">
               Department / Institution
             </h3>
             <div className="mb-6">
-              <span className="text-slate-500 dark:text-slate-400">Custom pricing for </span>
-              <span className="text-4xl font-bold text-slate-900 dark:text-white">teams</span>
+              <span className="text-slate-500">Custom pricing for </span>
+              <span className="text-4xl font-bold text-slate-900">teams</span>
             </div>
             
             <ul className="space-y-3 mb-8">
@@ -96,7 +96,7 @@ export default function PricingPage() {
                 "Priority phone support",
                 "Custom contract terms"
               ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+                <li key={i} className="flex items-start gap-3 text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                   <span>{feature}</span>
                 </li>
@@ -116,12 +116,12 @@ export default function PricingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-8 max-w-2xl mx-auto text-center"
+          className="bg-slate-50 rounded-2xl p-8 max-w-2xl mx-auto text-center"
         >
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+          <h3 className="text-xl font-bold text-slate-900 mb-4">
             30 Day Money Back Guarantee
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
+          <p className="text-slate-600 mb-6">
             Start free with up to 100 submissions, no credit card required. If you upgrade to a paid plan 
             and are not completely satisfied within your first 30 days, we will refund your payment in full.
           </p>

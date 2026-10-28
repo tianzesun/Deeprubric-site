@@ -36,18 +36,18 @@ export const ContactForm: React.FC = () => {
   if (state?.success) {
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 size={32} />
         </div>
-        <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+        <h3 className="text-xl font-semibold text-slate-900 mb-2">
           Thank You!
         </h3>
-        <p className="text-slate-600 dark:text-slate-400 mb-6">
+        <p className="text-slate-600 mb-6">
           We've received your request and will be in touch within 24 hours.
         </p>
         <button 
           onClick={() => window.location.reload()} 
-          className="px-6 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-indigo-600 dark:text-indigo-400 font-medium text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          className="px-6 py-2 border border-slate-200 rounded-lg text-indigo-600 font-medium text-sm hover:bg-slate-50 transition-colors"
         >
           Submit Another Request
         </button>
@@ -57,12 +57,12 @@ export const ContactForm: React.FC = () => {
 
   const fieldErrors = state?.fieldErrors ?? {};
   const inputClass = (field: keyof NonNullable<ContactFormState['fieldErrors']>) =>
-    `w-full bg-slate-50 dark:bg-slate-800/50 border ${
-      fieldErrors[field] ? 'border-red-400 dark:border-red-600' : 'border-slate-200 dark:border-slate-700'
-    } rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all dark:text-white placeholder:text-slate-400`;
+    `w-full bg-slate-50 border ${
+      fieldErrors[field] ? 'border-red-400' : 'border-slate-200'
+    } rounded-xl py-3 px-4 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-slate-400`;
   const fieldError = (field: keyof NonNullable<ContactFormState['fieldErrors']>) =>
     fieldErrors[field] && (
-      <p id={`contact-${field}-error`} className="text-xs text-red-600 dark:text-red-400">
+      <p id={`contact-${field}-error`} className="text-xs text-red-600">
         {fieldErrors[field]}
       </p>
     );
@@ -74,7 +74,7 @@ export const ContactForm: React.FC = () => {
   return (
     <form action={formAction} className="space-y-5">
       {state?.error && (
-        <div role="alert" className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg">
+        <div role="alert" className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
           <span className="text-sm font-medium">{state.error}</span>
         </div>
       )}
@@ -86,7 +86,7 @@ export const ContactForm: React.FC = () => {
       </div>
       
       <div className="space-y-2">
-        <label htmlFor="contact-fullName" className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="contact-fullName" className="flex items-center gap-2 text-sm font-medium text-slate-700">
           <User size={14} aria-hidden="true" /> Full Name
         </label>
         <input 
@@ -105,7 +105,7 @@ export const ContactForm: React.FC = () => {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="contact-institution" className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="contact-institution" className="flex items-center gap-2 text-sm font-medium text-slate-700">
           <Building2 size={14} aria-hidden="true" /> Institution
         </label>
         <input 
@@ -124,7 +124,7 @@ export const ContactForm: React.FC = () => {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="contact-email" className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="contact-email" className="flex items-center gap-2 text-sm font-medium text-slate-700">
           <Mail size={14} aria-hidden="true" /> Email Address
         </label>
         <input 
@@ -143,7 +143,7 @@ export const ContactForm: React.FC = () => {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="contact-message" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="contact-message" className="text-sm font-medium text-slate-700">
           How can we help?
         </label>
         <textarea 
@@ -162,9 +162,9 @@ export const ContactForm: React.FC = () => {
 
       <SubmitButton />
       
-      <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
+      <p className="text-xs text-slate-500 text-center">
         By submitting, you agree to our{' '}
-        <Link href="/privacy" className="underline hover:text-indigo-600 dark:hover:text-indigo-400">privacy policy</Link>.
+        <Link href="/privacy" className="underline hover:text-indigo-600">privacy policy</Link>.
         {' '}We'll never share your information.
       </p>
     </form>
