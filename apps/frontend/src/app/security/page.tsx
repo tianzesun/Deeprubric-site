@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 import { 
   ShieldAlert, Lock, Eye, ChevronDown, ChevronUp, FileCheck, Globe, Database, 
@@ -11,22 +11,6 @@ import {
 
 const SecurityPage = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-green-900 to-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-400 mx-auto mb-4" />
-          <p className="text-green-400 font-mono">Initializing Security Protocol...</p>
-        </div>
-      </div>
-    );
-  }
 
   const faqs = [
     {
@@ -117,7 +101,8 @@ const SecurityPage = () => {
     { icon: Cpu, label: "Quantum Ready", color: "from-violet-500 to-purple-500" }
   ];
 
-  const FloatingOrb = ({ delay = 0, size = "w-32 h-32", color = "from-green-400 to-emerald-400" }: { delay?: number, size?: string, color?: string }) => (
+  // Fixed positions (not Math.random) so server and client render the same markup
+  const FloatingOrb = ({ delay = 0, size = "w-32 h-32", color = "from-green-400 to-emerald-400", left, top }: { delay?: number, size?: string, color?: string, left: string, top: string }) => (
     <m.div
       className={`absolute ${size} bg-gradient-to-br ${color} rounded-full opacity-20 blur-xl`}
       animate={{
@@ -131,10 +116,7 @@ const SecurityPage = () => {
         delay: delay,
         ease: "easeInOut"
       }}
-      style={{
-        left: `${Math.random() * 80}%`,
-        top: `${Math.random() * 80}%`
-      }}
+      style={{ left, top }}
     />
   );
 
@@ -152,10 +134,10 @@ const SecurityPage = () => {
       </div>
 
       {/* Floating background orbs */}
-      <FloatingOrb delay={0} size="w-64 h-64" color="from-slate-500/20 to-slate-600/20" />
-      <FloatingOrb delay={1} size="w-48 h-48" color="from-gray-500/20 to-slate-500/20" />
-      <FloatingOrb delay={2} size="w-40 h-40" color="from-zinc-500/20 to-gray-500/20" />
-      <FloatingOrb delay={3} size="w-56 h-56" color="from-neutral-500/20 to-zinc-500/20" />
+      <FloatingOrb delay={0} size="w-64 h-64" color="from-slate-500/20 to-slate-600/20" left="8%" top="12%" />
+      <FloatingOrb delay={1} size="w-48 h-48" color="from-gray-500/20 to-slate-500/20" left="70%" top="20%" />
+      <FloatingOrb delay={2} size="w-40 h-40" color="from-zinc-500/20 to-gray-500/20" left="20%" top="65%" />
+      <FloatingOrb delay={3} size="w-56 h-56" color="from-neutral-500/20 to-zinc-500/20" left="60%" top="70%" />
 
       {/* Header */}
       <m.div 
@@ -174,8 +156,8 @@ const SecurityPage = () => {
           </m.div>
           <m.h1 
             className="text-6xl md:text-7xl font-black text-white mb-6 tracking-tight"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
             <span className="block">Security &</span>
@@ -185,8 +167,8 @@ const SecurityPage = () => {
           </m.h1>
           <m.p 
             className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Enterprise-grade protection for every classroom and institution. Your data's security is our highest priority.
