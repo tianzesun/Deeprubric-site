@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { 
   ShieldAlert, Lock, Eye, ChevronDown, ChevronUp, FileCheck, Globe, Database, 
   Users, Shield, Key, Zap, Fingerprint, Network, AlertTriangle, CheckCircle,
@@ -118,7 +118,7 @@ const SecurityPage = () => {
   ];
 
   const FloatingOrb = ({ delay = 0, size = "w-32 h-32", color = "from-green-400 to-emerald-400" }: { delay?: number, size?: string, color?: string }) => (
-    <motion.div
+    <m.div
       className={`absolute ${size} bg-gradient-to-br ${color} rounded-full opacity-20 blur-xl`}
       animate={{
         y: [0, -20, 0],
@@ -158,21 +158,21 @@ const SecurityPage = () => {
       <FloatingOrb delay={3} size="w-56 h-56" color="from-neutral-500/20 to-zinc-500/20" />
 
       {/* Header */}
-      <motion.div 
+      <m.div 
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 py-20 px-4 shadow-2xl backdrop-blur-sm"
       >
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <motion.div 
+          <m.div 
             className="bg-gradient-to-r from-slate-500/20 to-gray-500/20 text-slate-300 w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-8 border border-slate-500/30 shadow-2xl"
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             <ShieldAlert size={48} className="animate-pulse text-slate-400" />
-          </motion.div>
-          <motion.h1 
+          </m.div>
+          <m.h1 
             className="text-6xl md:text-7xl font-black text-white mb-6 tracking-tight"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -182,36 +182,36 @@ const SecurityPage = () => {
             <span className="block bg-gradient-to-r from-slate-400 via-gray-400 to-zinc-400 bg-clip-text text-transparent">
               Trust
             </span>
-          </motion.h1>
-          <motion.p 
+          </m.h1>
+          <m.p 
             className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Enterprise-grade protection for every classroom and institution. Your data's security is our highest priority.
-          </motion.p>
+          </m.p>
         </div>
-      </motion.div>
+      </m.div>
 
       <div className="relative max-w-6xl mx-auto py-20 px-6 space-y-16">
         {/* Core Pillars */}
-        <motion.section 
+        <m.section 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <m.h2 
             className="text-4xl font-black mb-12 text-center bg-gradient-to-r from-slate-400 via-gray-400 to-zinc-400 bg-clip-text text-transparent"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             Our Security Commitment
-          </motion.h2>
+          </m.h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {securityFeatures.map((feature, index) => (
-              <motion.div 
+              <m.div 
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -228,13 +228,13 @@ const SecurityPage = () => {
                   <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-white/30 rounded-full animate-pulse delay-1000" />
                   <feature.icon size={36} className="text-white" />
                 </div>
-                <motion.h3 
+                <m.h3 
                   className="text-2xl font-black text-white mb-4 group-hover:text-slate-300 transition-colors"
                   animate={{ scale: [1, 1.02, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   {feature.title}
-                </motion.h3>
+                </m.h3>
                 <p className="text-slate-300 leading-relaxed text-lg">
                   {feature.description}
                 </p>
@@ -242,29 +242,29 @@ const SecurityPage = () => {
                 {/* Decorative corner accents */}
                 <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-slate-400/30 rounded-br-3xl" />
                 <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-slate-400/30 rounded-tl-3xl" />
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.section>
+        </m.section>
 
         {/* Security Badges */}
-        <motion.section 
+        <m.section 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl p-10 border border-slate-700/50 shadow-2xl"
         >
-          <motion.h3 
+          <m.h3 
             className="text-3xl font-black mb-8 text-center text-white"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             Security Standards
-          </motion.h3>
+          </m.h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {securityBadges.map((badge, index) => (
-              <motion.div 
+              <m.div 
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -278,28 +278,28 @@ const SecurityPage = () => {
                 <span className="text-sm font-bold text-slate-200 text-center block">
                   {badge.label}
                 </span>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.section>
+        </m.section>
 
         {/* Interactive FAQ */}
-        <motion.section 
+        <m.section 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <m.h2 
             className="text-4xl font-black mb-12 bg-gradient-to-r from-slate-400 via-gray-400 to-zinc-400 bg-clip-text text-transparent"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             Security FAQ
-          </motion.h2>
+          </m.h2>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <motion.div 
+              <m.div 
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -307,7 +307,7 @@ const SecurityPage = () => {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl border border-slate-700/50 overflow-hidden shadow-2xl hover:shadow-xl hover:border-slate-500/50 transition-all duration-300"
               >
-                <motion.button 
+                <m.button 
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between p-8 text-left hover:bg-gradient-to-r hover:from-slate-500/10 hover:to-gray-500/10 transition-colors"
                   whileHover={{ scale: 1.02 }}
@@ -322,19 +322,19 @@ const SecurityPage = () => {
                   <div className="flex items-center gap-3">
                     <span className="text-sm text-slate-400 font-medium">Click to expand</span>
                     {openFaq === index ? (
-                      <motion.div animate={{ rotate: 180 }} transition={{ duration: 0.3 }}>
+                      <m.div animate={{ rotate: 180 }} transition={{ duration: 0.3 }}>
                         <ChevronUp size={24} className="text-slate-400" />
-                      </motion.div>
+                      </m.div>
                     ) : (
-                      <motion.div animate={{ rotate: 0 }} transition={{ duration: 0.3 }}>
+                      <m.div animate={{ rotate: 0 }} transition={{ duration: 0.3 }}>
                         <ChevronDown size={24} className="text-slate-500" />
-                      </motion.div>
+                      </m.div>
                     )}
                   </div>
-                </motion.button>
+                </m.button>
                 <AnimatePresence>
                   {openFaq === index && (
-                    <motion.div 
+                    <m.div 
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
@@ -342,16 +342,16 @@ const SecurityPage = () => {
                       className="px-8 pb-8 text-slate-300"
                     >
                       <p className="leading-relaxed text-lg">{faq.answer}</p>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.section>
+        </m.section>
 
         {/* Contact Section */}
-        <motion.section 
+        <m.section 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -359,21 +359,21 @@ const SecurityPage = () => {
           className="bg-gradient-to-r from-slate-600 via-gray-600 to-zinc-600 rounded-3xl p-10 text-white shadow-2xl border border-white/20"
         >
           <div className="max-w-4xl mx-auto text-center relative">
-            <motion.div
+            <m.div
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <motion.h3 
+              <m.h3 
                 className="text-4xl font-black mb-6 bg-gradient-to-r from-white via-slate-200 to-gray-200 bg-clip-text text-transparent"
                 animate={{ scale: [1, 1.02, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 Have Security Questions?
-              </motion.h3>
+              </m.h3>
               <p className="text-xl text-slate-100 mb-8 leading-relaxed">
                 Our security team is available 24/7 to address any concerns or questions you may have about data protection.
               </p>
-              <motion.button 
+              <m.button 
                 className="bg-white text-slate-600 px-10 py-4 rounded-3xl font-black text-lg hover:bg-slate-100 transition-all shadow-lg shadow-slate-900/30 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -382,14 +382,14 @@ const SecurityPage = () => {
                   <ShieldCheck size={24} className="animate-pulse" />
                   Contact Security Team
                 </span>
-              </motion.button>
-            </motion.div>
+              </m.button>
+            </m.div>
             
             {/* Floating action elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full blur-xl" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gray-400/10 rounded-full blur-xl" />
           </div>
-        </motion.section>
+        </m.section>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { 
   Brain, Users, Zap, Shield, BarChart3, Clock,
@@ -21,7 +21,7 @@ const FeatureCard = ({
   index?: number;
 }) => {
   return (
-    <motion.div 
+    <m.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -38,7 +38,7 @@ const FeatureCard = ({
       <p className="text-slate-600 leading-relaxed">
         {description}
       </p>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -54,7 +54,7 @@ const StatCard = ({
   index?: number;
 }) => {
   return (
-    <motion.div 
+    <m.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -68,7 +68,7 @@ const StatCard = ({
         {label}
       </div>
       <div className="text-xs text-slate-500">{description}</div>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -129,7 +129,7 @@ export default function FeaturesPage() {
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -137,37 +137,38 @@ export default function FeaturesPage() {
             >
               <Sparkles size={16} />
               <span>Platform Features</span>
-            </motion.div>
+            </m.div>
             
-            <motion.h1 
+            <m.h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               A Smarter Way to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
                 Assess Learning
               </span>
-            </motion.h1>
+            </m.h1>
             
-            <motion.p 
+            <m.p 
               className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               DeepRubric combines the efficiency of artificial intelligence with the expertise 
               of educators, creating a powerful assessment platform that saves time while 
               maintaining academic rigor.
-            </motion.p>
+            </m.p>
           </div>
         </div>
       </section>
 
       {/* Key Features Grid */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" aria-labelledby="key-features-heading">
         <div className="max-w-7xl mx-auto">
+          <h2 id="key-features-heading" className="sr-only">Key features</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <FeatureCard
@@ -219,7 +220,7 @@ export default function FeaturesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* For Educators */}
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -260,10 +261,10 @@ export default function FeaturesPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
 
             {/* For Institutions */}
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -304,7 +305,7 @@ export default function FeaturesPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -312,7 +313,7 @@ export default function FeaturesPage() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -320,8 +321,8 @@ export default function FeaturesPage() {
             className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
           >
             Ready to Transform Your Assessment Workflow?
-          </motion.h2>
-          <motion.p 
+          </m.h2>
+          <m.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -329,8 +330,8 @@ export default function FeaturesPage() {
             className="text-lg text-slate-600 mb-8"
           >
             Join institutions worldwide that are saving time and improving assessment consistency with DeepRubric.
-          </motion.p>
-          <motion.div
+          </m.p>
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -343,7 +344,7 @@ export default function FeaturesPage() {
               Request a Demo
               <ArrowRight size={18} />
             </Link>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </div>

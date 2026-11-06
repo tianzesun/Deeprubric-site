@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { 
   ArrowRight, GraduationCap, ClipboardCheck,
@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { FeatureCard } from '../components/FeatureCard';
 import { ContactForm } from '../components/ContactForm';
+import { CalendlyButton } from '../components/CalendlyButton';
 
 export default function HomePage() {
 
@@ -147,7 +148,7 @@ export default function HomePage() {
           
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center max-w-4xl mx-auto">
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -155,30 +156,30 @@ export default function HomePage() {
               >
                 <GraduationCap size={16} />
                 <span>AI-Powered Grading for Modern Educators</span>
-              </motion.div>
+              </m.div>
 
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+              <m.h1 
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight"
               >
                 <span className="text-slate-700">Stop Grading on Sunday Nights.</span>
                 <br />
                 <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">DeepRubric Does It For You.</span>
-              </motion.h1>
+              </m.h1>
 
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+              <m.p 
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed"
               >
                 You create the rubric. AI grades every submission, writes detailed feedback, and catches cheating.
                 You review, adjust if needed, and hit publish. Get your evenings and weekends back.
-              </motion.p>
+              </m.p>
 
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -186,7 +187,7 @@ export default function HomePage() {
               >
                 <Link 
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-1 active:translate-y-0"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:-translate-y-1 active:translate-y-0"
                 >
                   Grade Your Next Assignment Free
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -198,16 +199,16 @@ export default function HomePage() {
                   <Play size={18} />
                   See How It Works
                 </Link>
-              </motion.div>
+              </m.div>
               
-              <motion.p 
+              <m.p 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
                 className="text-sm text-slate-500 text-center"
               >
                 No credit card required. Cancel any time. Grade up to 100 submissions completely free.
-              </motion.p>
+              </m.p>
             </div>
           </div>
         </section>
@@ -215,7 +216,7 @@ export default function HomePage() {
         {/* --- WHAT MAKES US DIFFERENT --- */}
         <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -232,11 +233,11 @@ export default function HomePage() {
                 Gradescope and Crowdmark digitize grading. DeepRubric automates it — with AI scoring, 
                 written feedback, and academic integrity built in from the start.
               </p>
-            </motion.div>
+            </m.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {uniqueFeatures.map((feature, i) => (
-                <motion.div 
+                <m.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -258,7 +259,7 @@ export default function HomePage() {
                       {feature.highlight}
                     </span>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -268,15 +269,15 @@ export default function HomePage() {
         <section className="py-20 md:py-28 px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <motion.h2 
+              <m.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
               >
                 How We Compare
-              </motion.h2>
-              <motion.p 
+              </m.h2>
+              <m.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -284,10 +285,10 @@ export default function HomePage() {
                 className="text-lg text-slate-600"
               >
                 See how DeepRubric stacks up against other grading platforms
-              </motion.p>
+              </m.p>
             </div>
 
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -333,7 +334,7 @@ export default function HomePage() {
                   </tbody>
                 </table>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -342,7 +343,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-3 gap-8">
               {stats.map((stat, i) => (
-                <motion.div 
+                <m.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -359,10 +360,10 @@ export default function HomePage() {
                   <div className="text-xs text-slate-500">
                     {stat.description}
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-            <p className="text-center text-xs text-slate-400 mt-6 italic">
+            <p className="text-center text-xs text-slate-500 mt-6 italic">
               {statsFootnote}
             </p>
           </div>
@@ -372,7 +373,7 @@ export default function HomePage() {
         <section id="how-it-works" className="py-20 md:py-28 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <motion.h2 
+              <m.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -380,8 +381,8 @@ export default function HomePage() {
                 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
               >
                 How DeepRubric Works
-              </motion.h2>
-              <motion.p 
+              </m.h2>
+              <m.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -389,12 +390,12 @@ export default function HomePage() {
                 className="text-lg text-slate-600"
               >
                 From rubric to published grades in four simple steps
-              </motion.p>
+              </m.p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
               {howItWorks.map((step, i) => (
-                <motion.div 
+                <m.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -410,7 +411,7 @@ export default function HomePage() {
                       <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600">
                         {step.icon}
                       </div>
-                      <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center">
+                      <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-emerald-700 text-white text-xs font-bold flex items-center justify-center">
                         {step.step}
                       </div>
                     </div>
@@ -421,7 +422,7 @@ export default function HomePage() {
                       {step.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -449,7 +450,7 @@ export default function HomePage() {
         {/* --- ILLUSTRATIVE EDUCATOR SCENARIOS (not attributed to real people) --- */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -461,10 +462,10 @@ export default function HomePage() {
               <p className="text-lg text-slate-600">
                 Illustrative examples of how educators can use DeepRubric
               </p>
-            </motion.div>
+            </m.div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -483,9 +484,9 @@ export default function HomePage() {
                     <p className="text-sm text-slate-500">150-student essay course</p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -504,9 +505,9 @@ export default function HomePage() {
                     <p className="text-sm text-slate-500">Introductory programming course</p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -525,7 +526,7 @@ export default function HomePage() {
                     <p className="text-sm text-slate-500">Accreditation reporting</p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </section>
@@ -534,7 +535,7 @@ export default function HomePage() {
         <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <motion.h2 
+              <m.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -542,8 +543,8 @@ export default function HomePage() {
                 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
               >
                 Real Problems, Solved
-              </motion.h2>
-              <motion.p 
+              </m.h2>
+              <m.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -551,12 +552,12 @@ export default function HomePage() {
                 className="text-lg text-slate-600"
               >
                 How educators are actually using DeepRubric
-              </motion.p>
+              </m.p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {useCases.map((useCase, i) => (
-                <motion.div 
+                <m.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -568,7 +569,7 @@ export default function HomePage() {
                     <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
                       {useCase.icon}
                     </div>
-                    <span className="px-3 py-1 text-xs font-bold bg-emerald-600 text-white rounded-full">
+                    <span className="px-3 py-1 text-xs font-bold bg-emerald-700 text-white rounded-full">
                       {useCase.metric}
                     </span>
                   </div>
@@ -578,11 +579,11 @@ export default function HomePage() {
                   <p className="text-slate-600 text-sm leading-relaxed">
                     {useCase.description}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
             
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -592,7 +593,7 @@ export default function HomePage() {
               <p className="text-sm text-slate-500 italic">
                 These examples are based on common educator workflows. Your results may vary based on course size and rubric complexity.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -601,7 +602,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="max-w-xl">
-                <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                <div className="flex items-center gap-2 text-emerald-700 font-semibold text-sm uppercase tracking-wider mb-4">
                   <ShieldCheck size={18} /> Enterprise Security
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
@@ -640,15 +641,15 @@ export default function HomePage() {
         {/* --- CTA SECTION --- */}
         <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-emerald-600 to-teal-600">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h2 
+            <m.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-white mb-6"
             >
               Grade Smarter. Catch Cheating. Give Better Feedback.
-            </motion.h2>
-            <motion.p 
+            </m.h2>
+            <m.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -656,8 +657,8 @@ export default function HomePage() {
               className="text-lg md:text-xl text-emerald-100 mb-10 max-w-2xl mx-auto"
             >
               Set up your rubric, let AI do the grading, and publish results in a fraction of the time.
-            </motion.p>
-            <motion.div 
+            </m.p>
+            <m.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -677,7 +678,7 @@ export default function HomePage() {
               >
                 Explore Features
               </Link>
-            </motion.div>
+            </m.div>
           </div>
         </section>
 
@@ -686,16 +687,16 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-600 text-sm font-medium mb-6"
                 >
                   <MessageSquare size={16} /> Get Started
-                </motion.div>
+                </m.div>
                 
-                <motion.h2 
+                <m.h2 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 }}
@@ -703,9 +704,9 @@ export default function HomePage() {
                   className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6"
                 >
                   See DeepRubric in Action
-                </motion.h2>
+                </m.h2>
                 
-                <motion.p 
+                <m.p 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
@@ -715,9 +716,9 @@ export default function HomePage() {
                   Schedule a personalized demo. Bring a real assignment — we'll run it through 
                   DeepRubric live and show you AI scoring, feedback generation, and integrity 
                   detection in action.
-                </motion.p>
+                </m.p>
                 
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
@@ -742,10 +743,14 @@ export default function HomePage() {
                       <p className="font-semibold text-slate-900">Live AI grading on your own assignment</p>
                     </div>
                   </div>
-                </motion.div>
+                  <div className="pt-4">
+                    <p className="text-sm text-slate-500 mb-3">Prefer to talk it through? Pick a time that suits you.</p>
+                    <CalendlyButton />
+                  </div>
+                </m.div>
               </div>
 
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -758,7 +763,7 @@ export default function HomePage() {
                   </h3>
                   <ContactForm />
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </section>

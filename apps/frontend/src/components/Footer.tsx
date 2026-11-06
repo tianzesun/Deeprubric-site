@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold text-slate-900 mb-4">Product</h4>
+            <h2 className="font-semibold text-slate-900 mb-4">Product</h2>
             <ul className="space-y-2">
               <li><Link href="/features" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">Features</Link></li>
               <li><Link href="/security" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">Security</Link></li>
@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold text-slate-900 mb-4">Resources</h4>
+            <h2 className="font-semibold text-slate-900 mb-4">Resources</h2>
             <ul className="space-y-2">
               <li><Link href="/support" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">Support</Link></li>
               <li><Link href="/cookies" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">Cookies</Link></li>
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-slate-900 mb-4">Contact</h4>
+            <h2 className="font-semibold text-slate-900 mb-4">Contact</h2>
             <ul className="space-y-2">
               <li><a href="mailto:contact@deeprubric.ai" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">contact@deeprubric.ai</a></li>
               <li><Link href="/#contact" className="text-sm text-slate-500 hover:text-indigo-600 transition-colors">Request Demo</Link></li>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 const faqs = [
@@ -45,7 +45,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen pt-32 pb-24 px-6">
       <div className="max-w-3xl mx-auto">
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -57,11 +57,11 @@ export default function FAQPage() {
           <p className="text-lg text-slate-600">
             Everything you need to know about DeepRubric
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <motion.div 
+            <m.div 
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -78,17 +78,17 @@ export default function FAQPage() {
                 <span className="font-semibold text-slate-900 pr-4">
                   {faq.question}
                 </span>
-                <motion.div
+                <m.div
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   aria-hidden="true"
                   className="flex-shrink-0 text-slate-400"
                 >
                   <ChevronDown size={20} />
-                </motion.div>
+                </m.div>
               </button>
               
-              <motion.div
+              <m.div
                 id={`faq-answer-${i}`}
                 role="region"
                 aria-labelledby={`faq-question-${i}`}
@@ -104,8 +104,8 @@ export default function FAQPage() {
                 <div className="px-6 pb-6 pt-0 text-slate-600 leading-relaxed">
                   {faq.answer}
                 </div>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
           ))}
         </div>
       </div>

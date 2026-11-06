@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Shield, Lock, Globe, Server } from 'lucide-react';
 
 interface FeatureProps {
@@ -18,7 +18,7 @@ const iconMap = {
 
 export const FeatureCard: React.FC<FeatureProps> = ({ title, description, iconType, index }) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
@@ -32,6 +32,6 @@ export const FeatureCard: React.FC<FeatureProps> = ({ title, description, iconTy
       <p className="text-sm text-slate-500 mt-1">
         {description}
       </p>
-    </motion.div>
+    </m.div>
   );
 };

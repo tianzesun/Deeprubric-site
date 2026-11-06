@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Lock, ShieldCheck, FileText, Cookie, Globe2, DatabaseBackup, Fingerprint, Users as UsersIcon, Video as VideoIcon, Network } from 'lucide-react';
 
 const ComplianceCard = ({ 
@@ -20,7 +20,7 @@ const ComplianceCard = ({
   index?: number;
 }) => {
   return (
-    <motion.a 
+    <m.a 
       href={href}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const ComplianceCard = ({
       <span className="text-sm font-medium text-indigo-600 group-hover:text-indigo-700 transition-colors flex items-center gap-2">
         View Document →
       </span>
-    </motion.a>
+    </m.a>
   );
 };
 
@@ -105,7 +105,7 @@ export default function CompliancePage() {
 
         {/* Compliance Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -147,9 +147,9 @@ export default function CompliancePage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -191,11 +191,11 @@ export default function CompliancePage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Support CTA */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -219,7 +219,7 @@ export default function CompliancePage() {
               Available for enterprise and institutional partners
             </span>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

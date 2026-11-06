@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -9,7 +9,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen pt-32 pb-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -21,18 +21,18 @@ export default function PricingPage() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             One flat price per instructor. No per student fees. No hidden costs.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16">
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-white border border-slate-200 rounded-2xl p-8"
           >
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-2">
               Individual Instructor
-            </h3>
+            </h2>
             <div className="mb-6">
               <span className="text-4xl font-bold text-slate-900">$12</span>
               <span className="text-slate-500"> / month</span>
@@ -57,7 +57,7 @@ export default function PricingPage() {
 
             <Link 
               href="/#contact"
-              className="block w-full text-center py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all"
+              className="block w-full text-center py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold transition-all"
             >
               Start Free Trial
             </Link>
@@ -65,21 +65,21 @@ export default function PricingPage() {
             <p className="text-center text-sm text-slate-500 mt-3">
               Grade your first 100 submissions free. No credit card required.
             </p>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white border-2 border-emerald-500 rounded-2xl p-8 relative"
           >
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-emerald-600 text-white text-xs font-semibold rounded-full">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-emerald-700 text-white text-xs font-semibold rounded-full">
               Recommended
             </div>
             
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+            <h2 className="text-xl font-bold text-slate-900 mb-2">
               Department / Institution
-            </h3>
+            </h2>
             <div className="mb-6">
               <span className="text-4xl font-bold text-slate-900">Custom</span>
               <span className="text-slate-500"> pricing for teams</span>
@@ -105,34 +105,34 @@ export default function PricingPage() {
 
             <Link 
               href="/#contact"
-              className="block w-full text-center py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all"
+              className="block w-full text-center py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold transition-all"
             >
               Contact Sales
             </Link>
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="bg-slate-50 rounded-2xl p-8 max-w-2xl mx-auto text-center"
         >
-          <h3 className="text-xl font-bold text-slate-900 mb-4">
+          <h2 className="text-xl font-bold text-slate-900 mb-4">
             30 Day Money Back Guarantee
-          </h3>
+          </h2>
           <p className="text-slate-600 mb-6">
             Start free with up to 100 submissions, no credit card required. If you upgrade to a paid plan 
             and are not completely satisfied within your first 30 days, we will refund your payment in full.
           </p>
           <Link 
             href="/#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold transition-all"
           >
             Start Your Free Trial
             <ArrowRight size={18} />
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import React, { useActionState, useEffect, useState } from 'react';
 import { Mail, MessageSquare, GraduationCap, Users, Clock, Shield, BookOpen, Star, Zap, CheckCircle, AlertCircle, HelpCircle, Calendar, ExternalLink, LifeBuoy, Send } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
+import { CalendlyButton } from '@/components/CalendlyButton';
 import { submitSupportRequest } from '@/app/actions/support';
 
 // Create a SendIcon component
@@ -154,6 +155,17 @@ export default function SupportPage() {
                   <h3 className="text-lg font-semibold text-slate-900 mb-1">Live Chat</h3>
                   <p className="text-slate-600 mb-2">Available in-app</p>
                   <p className="text-sm text-slate-500">24/7 automated support with human escalation</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center">
+                  <Calendar size={24} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-1">Book a Meeting</h3>
+                  <p className="text-slate-600 mb-3">Talk to our team in a 30-minute video call</p>
+                  <CalendlyButton label="Schedule a Time" className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm rounded-lg font-semibold transition-all" />
                 </div>
               </div>
             </div>
